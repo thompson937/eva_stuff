@@ -1,0 +1,16 @@
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\bin\Debug\net10.0-windows\QuitApp.exe
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\bin\Debug\net10.0-windows\QuitApp.deps.json
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\bin\Debug\net10.0-windows\QuitApp.runtimeconfig.json
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\bin\Debug\net10.0-windows\QuitApp.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\bin\Debug\net10.0-windows\QuitApp.pdb
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\obj\Debug\net10.0-windows\QuitApp.Form1.resources
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\obj\Debug\net10.0-windows\QuitApp.csproj.GenerateResource.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\obj\Debug\net10.0-windows\QuitApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\obj\Debug\net10.0-windows\QuitApp.AssemblyInfoInputs.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\obj\Debug\net10.0-windows\QuitApp.AssemblyInfo.cs
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\obj\Debug\net10.0-windows\QuitApp.csproj.CoreCompileInputs.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\obj\Debug\net10.0-windows\QuitApp.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\obj\Debug\net10.0-windows\refint\QuitApp.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\obj\Debug\net10.0-windows\QuitApp.pdb
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\obj\Debug\net10.0-windows\QuitApp.genruntimeconfig.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\QuitApp\obj\Debug\net10.0-windows\ref\QuitApp.dll

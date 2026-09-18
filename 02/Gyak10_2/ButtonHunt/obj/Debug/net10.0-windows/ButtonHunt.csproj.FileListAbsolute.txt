@@ -1,0 +1,16 @@
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\bin\Debug\net10.0-windows\ButtonHunt.exe
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\bin\Debug\net10.0-windows\ButtonHunt.deps.json
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\bin\Debug\net10.0-windows\ButtonHunt.runtimeconfig.json
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\bin\Debug\net10.0-windows\ButtonHunt.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\bin\Debug\net10.0-windows\ButtonHunt.pdb
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\obj\Debug\net10.0-windows\ButtonHunt.Form1.resources
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\obj\Debug\net10.0-windows\ButtonHunt.csproj.GenerateResource.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\obj\Debug\net10.0-windows\ButtonHunt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\obj\Debug\net10.0-windows\ButtonHunt.AssemblyInfoInputs.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\obj\Debug\net10.0-windows\ButtonHunt.AssemblyInfo.cs
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\obj\Debug\net10.0-windows\ButtonHunt.csproj.CoreCompileInputs.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\obj\Debug\net10.0-windows\ButtonHunt.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\obj\Debug\net10.0-windows\refint\ButtonHunt.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\obj\Debug\net10.0-windows\ButtonHunt.pdb
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\obj\Debug\net10.0-windows\ButtonHunt.genruntimeconfig.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\02\Gyak10_2\ButtonHunt\obj\Debug\net10.0-windows\ref\ButtonHunt.dll

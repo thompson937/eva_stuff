@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\Tombola.Buggy\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2AB1D2F7-399C-4BDE-9013-D7348C4E0CE8}|Tombola.csproj|c:\\users\\ko8dqj\\documents\\ko8dqj\\tombola.buggy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AB1D2F7-399C-4BDE-9013-D7348C4E0CE8}|Tombola.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AB1D2F7-399C-4BDE-9013-D7348C4E0CE8}|Tombola.csproj|c:\\users\\ko8dqj\\documents\\ko8dqj\\tombola.buggy\\tombolamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AB1D2F7-399C-4BDE-9013-D7348C4E0CE8}|Tombola.csproj|solutionrelative:tombolamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TombolaModel.cs",
+              "DocumentMoniker": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\Tombola.Buggy\\TombolaModel.cs",
+              "RelativeDocumentMoniker": "TombolaModel.cs",
+              "ToolTip": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\Tombola.Buggy\\TombolaModel.cs",
+              "RelativeToolTip": "TombolaModel.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAywBoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-11T10:17:59.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\Tombola.Buggy\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\Tombola.Buggy\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAiwDgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-11T10:16:57.151Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

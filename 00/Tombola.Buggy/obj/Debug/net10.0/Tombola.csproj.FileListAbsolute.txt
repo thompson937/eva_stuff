@@ -1,0 +1,14 @@
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\bin\Debug\net10.0\Tombola.exe
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\bin\Debug\net10.0\Tombola.deps.json
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\bin\Debug\net10.0\Tombola.runtimeconfig.json
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\bin\Debug\net10.0\Tombola.dll
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\bin\Debug\net10.0\Tombola.pdb
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\obj\Debug\net10.0\Tombola.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\obj\Debug\net10.0\Tombola.AssemblyInfoInputs.cache
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\obj\Debug\net10.0\Tombola.AssemblyInfo.cs
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\obj\Debug\net10.0\Tombola.csproj.CoreCompileInputs.cache
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\obj\Debug\net10.0\Tombola.dll
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\obj\Debug\net10.0\refint\Tombola.dll
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\obj\Debug\net10.0\Tombola.pdb
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\obj\Debug\net10.0\Tombola.genruntimeconfig.cache
+C:\Users\ko8dqj\Documents\ko8dqj\Tombola.Buggy\obj\Debug\net10.0\ref\Tombola.dll
