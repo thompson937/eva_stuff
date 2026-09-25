@@ -1,0 +1,12 @@
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\bin\Debug\net10.0\DocuStatModel.deps.json
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\bin\Debug\net10.0\DocuStatModel.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\bin\Debug\net10.0\DocuStatModel.pdb
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\obj\Debug\net10.0\DocuStatModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\obj\Debug\net10.0\DocuStatModel.AssemblyInfoInputs.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\obj\Debug\net10.0\DocuStatModel.AssemblyInfo.cs
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\obj\Debug\net10.0\DocuStatModel.csproj.CoreCompileInputs.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\obj\Debug\net10.0\DocuStatModel.sourcelink.json
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\obj\Debug\net10.0\DocuStatModel.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\obj\Debug\net10.0\refint\DocuStatModel.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\obj\Debug\net10.0\DocuStatModel.pdb
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\03\Gyak10_3\DocuStatModel\obj\Debug\net10.0\ref\DocuStatModel.dll
