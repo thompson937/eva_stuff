@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "vpuixxjzNbc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\04\\DocuStat\\DocuStat\\DocuStat.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\itext\\9.8.0\\itext.9.8.0.nupkg.sha512",
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\itext.commons\\9.8.0\\itext.commons.9.8.0.nupkg.sha512",
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\1.1.0\\microsoft.dotnet.platformabstractions.1.1.0.nupkg.sha512",
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.2\\microsoft.extensions.dependencymodel.10.0.2.nupkg.sha512",
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\system.security.cryptography.pkcs\\6.0.5\\system.security.cryptography.pkcs.6.0.5.nupkg.sha512",
+    "C:\\Users\\ko8dqj\\.nuget\\packages\\system.security.cryptography.xml\\6.0.2\\system.security.cryptography.xml.6.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

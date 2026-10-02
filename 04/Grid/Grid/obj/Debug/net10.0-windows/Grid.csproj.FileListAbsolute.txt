@@ -1,0 +1,17 @@
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\bin\Debug\net10.0-windows\Grid.exe
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\bin\Debug\net10.0-windows\Grid.deps.json
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\bin\Debug\net10.0-windows\Grid.runtimeconfig.json
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\bin\Debug\net10.0-windows\Grid.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\bin\Debug\net10.0-windows\Grid.pdb
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\Grid.Form1.resources
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\Grid.csproj.GenerateResource.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\Grid.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\Grid.AssemblyInfoInputs.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\Grid.AssemblyInfo.cs
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\Grid.csproj.CoreCompileInputs.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\Grid.sourcelink.json
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\Grid.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\refint\Grid.dll
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\Grid.pdb
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\Grid.genruntimeconfig.cache
+C:\Users\ko8dqj\Documents\ko8dqj\eva_stuff\04\Grid\Grid\obj\Debug\net10.0-windows\ref\Grid.dll
