@@ -1,30 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\",
+  "WorkspaceRootPath": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AC6323CD-4C64-41BD-957B-B7648574F3F8}|DocuStatView\\DocuStatView.csproj|c:\\users\\ko8dqj\\documents\\ko8dqj\\eva_stuff\\03\\gyak10_3\\docustatview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC6323CD-4C64-41BD-957B-B7648574F3F8}|DocuStatView\\DocuStatView.csproj|solutionrelative:docustatview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{92C7B266-758E-E0B7-31F1-4D8E64EAB608}|DocuStatView\\DocuStatView.csproj|c:\\users\\thoma\\eva\\eva_stuff\\03\\gyak10_3\\docustatview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92C7B266-758E-E0B7-31F1-4D8E64EAB608}|DocuStatView\\DocuStatView.csproj|solutionrelative:docustatview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC6323CD-4C64-41BD-957B-B7648574F3F8}|DocuStatView\\DocuStatView.csproj|c:\\users\\ko8dqj\\documents\\ko8dqj\\eva_stuff\\03\\gyak10_3\\docustatview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{AC6323CD-4C64-41BD-957B-B7648574F3F8}|DocuStatView\\DocuStatView.csproj|C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\docustatview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{AC6323CD-4C64-41BD-957B-B7648574F3F8}|DocuStatView\\DocuStatView.csproj|solutionrelative:docustatview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92CCA775-A69A-48D0-8462-2D00B5D95C35}|DocuStatModel\\DocuStatModel.csproj|c:\\users\\ko8dqj\\documents\\ko8dqj\\eva_stuff\\03\\gyak10_3\\docustatmodel\\documentstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92CCA775-A69A-48D0-8462-2D00B5D95C35}|DocuStatModel\\DocuStatModel.csproj|solutionrelative:docustatmodel\\documentstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB4C01F6-1A40-22A9-3AB2-F0F1FD4032CF}|DocuStatModel\\DocuStatModel.csproj|c:\\users\\thoma\\eva\\eva_stuff\\03\\gyak10_3\\docustatmodel\\documentstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4C01F6-1A40-22A9-3AB2-F0F1FD4032CF}|DocuStatModel\\DocuStatModel.csproj|solutionrelative:docustatmodel\\documentstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92CCA775-A69A-48D0-8462-2D00B5D95C35}|DocuStatModel\\DocuStatModel.csproj|c:\\users\\ko8dqj\\documents\\ko8dqj\\eva_stuff\\03\\gyak10_3\\docustatmodel\\textstatisticsreadyeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92CCA775-A69A-48D0-8462-2D00B5D95C35}|DocuStatModel\\DocuStatModel.csproj|solutionrelative:docustatmodel\\textstatisticsreadyeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB4C01F6-1A40-22A9-3AB2-F0F1FD4032CF}|DocuStatModel\\DocuStatModel.csproj|c:\\users\\thoma\\eva\\eva_stuff\\03\\gyak10_3\\docustatmodel\\textstatisticsreadyeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4C01F6-1A40-22A9-3AB2-F0F1FD4032CF}|DocuStatModel\\DocuStatModel.csproj|solutionrelative:docustatmodel\\textstatisticsreadyeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92CCA775-A69A-48D0-8462-2D00B5D95C35}|DocuStatModel\\DocuStatModel.csproj|c:\\users\\ko8dqj\\documents\\ko8dqj\\eva_stuff\\03\\gyak10_3\\docustatmodel\\idocumentstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92CCA775-A69A-48D0-8462-2D00B5D95C35}|DocuStatModel\\DocuStatModel.csproj|solutionrelative:docustatmodel\\idocumentstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BB4C01F6-1A40-22A9-3AB2-F0F1FD4032CF}|DocuStatModel\\DocuStatModel.csproj|c:\\users\\thoma\\eva\\eva_stuff\\03\\gyak10_3\\docustatmodel\\idocumentstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BB4C01F6-1A40-22A9-3AB2-F0F1FD4032CF}|DocuStatModel\\DocuStatModel.csproj|solutionrelative:docustatmodel\\idocumentstatistics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC6323CD-4C64-41BD-957B-B7648574F3F8}|DocuStatView\\DocuStatView.csproj|c:\\users\\ko8dqj\\documents\\ko8dqj\\eva_stuff\\03\\gyak10_3\\docustatview\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC6323CD-4C64-41BD-957B-B7648574F3F8}|DocuStatView\\DocuStatView.csproj|solutionrelative:docustatview\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{92C7B266-758E-E0B7-31F1-4D8E64EAB608}|DocuStatView\\DocuStatView.csproj|c:\\users\\thoma\\eva\\eva_stuff\\03\\gyak10_3\\docustatview\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92C7B266-758E-E0B7-31F1-4D8E64EAB608}|DocuStatView\\DocuStatView.csproj|solutionrelative:docustatview\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,11 +40,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.cs",
               "RelativeDocumentMoniker": "DocuStatView\\Form1.cs",
-              "ToolTip": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.cs*",
-              "RelativeToolTip": "DocuStatView\\Form1.cs*",
-              "ViewState": "AgIAAEcAAAAAAAAAAADwv1gAAABFAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.cs",
+              "RelativeToolTip": "DocuStatView\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-25T11:13:03.59Z",
               "EditorCaption": ""
@@ -53,65 +53,60 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "DocumentStatistics.cs",
-              "DocumentMoniker": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\DocumentStatistics.cs",
+              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\DocumentStatistics.cs",
               "RelativeDocumentMoniker": "DocuStatModel\\DocumentStatistics.cs",
-              "ToolTip": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\DocumentStatistics.cs",
+              "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\DocumentStatistics.cs",
               "RelativeToolTip": "DocuStatModel\\DocumentStatistics.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAYwEYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-25T11:00:23.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-25T11:00:23.084Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "TextStatisticsReadyEventArgs.cs",
-              "DocumentMoniker": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\TextStatisticsReadyEventArgs.cs",
+              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\TextStatisticsReadyEventArgs.cs",
               "RelativeDocumentMoniker": "DocuStatModel\\TextStatisticsReadyEventArgs.cs",
-              "ToolTip": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\TextStatisticsReadyEventArgs.cs",
+              "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\TextStatisticsReadyEventArgs.cs",
               "RelativeToolTip": "DocuStatModel\\TextStatisticsReadyEventArgs.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-25T10:54:10.599Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-25T10:54:10.599Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "IDocumentStatistics.cs",
-              "DocumentMoniker": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\IDocumentStatistics.cs",
+              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\IDocumentStatistics.cs",
               "RelativeDocumentMoniker": "DocuStatModel\\IDocumentStatistics.cs",
-              "ToolTip": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\IDocumentStatistics.cs",
+              "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\DocuStatModel\\IDocumentStatistics.cs",
               "RelativeToolTip": "DocuStatModel\\IDocumentStatistics.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAowBgAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-25T10:49:28.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-25T10:49:28.245Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.cs",
               "RelativeDocumentMoniker": "DocuStatView\\Form1.cs",
-              "ToolTip": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.cs [Design]*",
-              "RelativeToolTip": "DocuStatView\\Form1.cs [Design]*",
+              "ToolTip": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-25T10:38:06.78Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-09-25T10:38:06.78Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "DocuStatView\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\ko8dqj\\Documents\\ko8dqj\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\03\\Gyak10_3\\DocuStatView\\Form1.Designer.cs",
               "RelativeToolTip": "DocuStatView\\Form1.Designer.cs",
               "ViewState": "AgIAAPgAAAAAAAAAAAAuwP4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-25T10:36:46.762Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-25T10:36:46.762Z"
             }
           ]
         }

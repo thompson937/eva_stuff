@@ -31,13 +31,21 @@ namespace Grid
             {
                 for (int j = 0; j < cellNumber; j++)
                 {
-                    Button b = new Button{ Width = cellW, Height = cellH };
+                    Button b = new Button { Width = cellW, Height = cellH };
                     b.Location = new Point(j * cellW, i * cellH);
                     b.Click += B_Click;
+                    b.MouseEnter += B_Enter;
                     buttons.Add(b);
                     panel1.Controls.Add(b);
                 }
             }
+        }
+
+        private void B_Enter(object? sender, EventArgs e)
+        {
+            var b = sender as Button;
+
+            b!.BackColor = Color.RebeccaPurple;
         }
 
         private void B_Click(object? sender, EventArgs e)

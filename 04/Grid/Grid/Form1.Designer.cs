@@ -44,8 +44,8 @@
             radioButton1.Size = new Size(42, 19);
             radioButton1.TabIndex = 0;
             radioButton1.TabStop = true;
-            radioButton1.Tag = "3";
-            radioButton1.Text = "3x3";
+            radioButton1.Tag = "5";
+            radioButton1.Text = "5x5";
             radioButton1.UseVisualStyleBackColor = true;
             radioButton1.Click += radioButton_Click;
             // 
@@ -54,10 +54,10 @@
             radioButton2.AutoSize = true;
             radioButton2.Location = new Point(32, 58);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(42, 19);
+            radioButton2.Size = new Size(54, 19);
             radioButton2.TabIndex = 1;
-            radioButton2.Tag = "4";
-            radioButton2.Text = "4x4";
+            radioButton2.Tag = "10";
+            radioButton2.Text = "10x10";
             radioButton2.UseVisualStyleBackColor = true;
             radioButton2.Click += radioButton_Click;
             // 
@@ -66,10 +66,10 @@
             radioButton3.AutoSize = true;
             radioButton3.Location = new Point(32, 83);
             radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(42, 19);
+            radioButton3.Size = new Size(54, 19);
             radioButton3.TabIndex = 2;
-            radioButton3.Tag = "5";
-            radioButton3.Text = "5x5";
+            radioButton3.Tag = "15";
+            radioButton3.Text = "15x15";
             radioButton3.UseVisualStyleBackColor = true;
             radioButton3.Click += radioButton_Click;
             // 
