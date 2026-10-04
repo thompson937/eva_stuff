@@ -1,0 +1,13 @@
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\NonogramModel.deps.json
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\NonogramModel.dll
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\NonogramModel.pdb
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\NonogramModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\NonogramModel.AssemblyInfoInputs.cache
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\NonogramModel.AssemblyInfo.cs
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\NonogramModel.csproj.CoreCompileInputs.cache
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\NonogramModel.sourcelink.json
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\NonogramModel.dll
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\refint\NonogramModel.dll
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\NonogramModel.pdb
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\ref\NonogramModel.dll
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\Nonogram.9EB64116.Up2Date

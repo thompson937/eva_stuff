@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="NonogramModel/NonogramModel.csproj" />
+  <Project Path="NonogramView/NonogramView.csproj" />
+</Solution>
