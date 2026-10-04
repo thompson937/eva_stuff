@@ -1,0 +1,14 @@
+/home/tom/Code/csharp/hanjie_prototype/obj/Debug/net10.0/hanjie_prototype.GeneratedMSBuildEditorConfig.editorconfig
+/home/tom/Code/csharp/hanjie_prototype/obj/Debug/net10.0/hanjie_prototype.AssemblyInfoInputs.cache
+/home/tom/Code/csharp/hanjie_prototype/obj/Debug/net10.0/hanjie_prototype.AssemblyInfo.cs
+/home/tom/Code/csharp/hanjie_prototype/obj/Debug/net10.0/hanjie_prototype.csproj.CoreCompileInputs.cache
+/home/tom/Code/csharp/hanjie_prototype/bin/Debug/net10.0/hanjie_prototype
+/home/tom/Code/csharp/hanjie_prototype/bin/Debug/net10.0/hanjie_prototype.deps.json
+/home/tom/Code/csharp/hanjie_prototype/bin/Debug/net10.0/hanjie_prototype.runtimeconfig.json
+/home/tom/Code/csharp/hanjie_prototype/bin/Debug/net10.0/hanjie_prototype.dll
+/home/tom/Code/csharp/hanjie_prototype/bin/Debug/net10.0/hanjie_prototype.pdb
+/home/tom/Code/csharp/hanjie_prototype/obj/Debug/net10.0/hanjie_prototype.dll
+/home/tom/Code/csharp/hanjie_prototype/obj/Debug/net10.0/refint/hanjie_prototype.dll
+/home/tom/Code/csharp/hanjie_prototype/obj/Debug/net10.0/hanjie_prototype.pdb
+/home/tom/Code/csharp/hanjie_prototype/obj/Debug/net10.0/hanjie_prototype.genruntimeconfig.cache
+/home/tom/Code/csharp/hanjie_prototype/obj/Debug/net10.0/ref/hanjie_prototype.dll
