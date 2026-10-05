@@ -38,6 +38,8 @@
             rowPanel = new Panel();
             label1 = new Label();
             liveCounterLabel = new Label();
+            label2 = new Label();
+            timeCounterLabel = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,7 +48,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(884, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "Strip";
             // 
@@ -77,7 +79,6 @@
             // 
             // buttonPanel
             // 
-            buttonPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonPanel.Location = new Point(173, 41);
             buttonPanel.Name = "buttonPanel";
             buttonPanel.Size = new Size(400, 400);
@@ -85,18 +86,16 @@
             // 
             // columnPanel
             // 
-            columnPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             columnPanel.Location = new Point(173, 447);
             columnPanel.Name = "columnPanel";
-            columnPanel.Size = new Size(400, 60);
+            columnPanel.Size = new Size(400, 300);
             columnPanel.TabIndex = 2;
             // 
             // rowPanel
             // 
-            rowPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             rowPanel.Location = new Point(579, 41);
             rowPanel.Name = "rowPanel";
-            rowPanel.Size = new Size(60, 400);
+            rowPanel.Size = new Size(300, 400);
             rowPanel.TabIndex = 3;
             // 
             // label1
@@ -114,17 +113,40 @@
             liveCounterLabel.AutoSize = true;
             liveCounterLabel.BorderStyle = BorderStyle.Fixed3D;
             liveCounterLabel.Font = new Font("Segoe UI", 16F);
-            liveCounterLabel.Location = new Point(88, 41);
+            liveCounterLabel.Location = new Point(88, 39);
             liveCounterLabel.Name = "liveCounterLabel";
             liveCounterLabel.Size = new Size(27, 32);
             liveCounterLabel.TabIndex = 5;
             liveCounterLabel.Text = "3";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label2.Location = new Point(12, 75);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 30);
+            label2.TabIndex = 6;
+            label2.Text = "Time:";
+            // 
+            // timeCounterLabel
+            // 
+            timeCounterLabel.AutoSize = true;
+            timeCounterLabel.BorderStyle = BorderStyle.Fixed3D;
+            timeCounterLabel.Font = new Font("Segoe UI", 16F);
+            timeCounterLabel.Location = new Point(88, 75);
+            timeCounterLabel.Name = "timeCounterLabel";
+            timeCounterLabel.Size = new Size(68, 32);
+            timeCounterLabel.TabIndex = 7;
+            timeCounterLabel.Text = "00:00";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 535);
+            ClientSize = new Size(884, 711);
+            Controls.Add(timeCounterLabel);
+            Controls.Add(label2);
             Controls.Add(liveCounterLabel);
             Controls.Add(label1);
             Controls.Add(rowPanel);
@@ -151,5 +173,7 @@
         private Panel rowPanel;
         private Label label1;
         private Label liveCounterLabel;
+        private Label label2;
+        private Label timeCounterLabel;
     }
 }

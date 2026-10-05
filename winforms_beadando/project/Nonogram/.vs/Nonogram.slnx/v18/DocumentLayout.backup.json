@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E8150B7B-7D58-4BBD-B04B-961B0E3DB6F9}|NonogramView\\NonogramView.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogramview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8150B7B-7D58-4BBD-B04B-961B0E3DB6F9}|NonogramView\\NonogramView.csproj|solutionrelative:nonogramview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D70FA00-94EE-4542-7AB1-49AC1FA2AB68}|NonogramModel\\NonogramModel.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogrammodel\\gamestates\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D70FA00-94EE-4542-7AB1-49AC1FA2AB68}|NonogramModel\\NonogramModel.csproj|solutionrelative:nonogrammodel\\gamestates\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8150B7B-7D58-4BBD-B04B-961B0E3DB6F9}|NonogramView\\NonogramView.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogramview\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8150B7B-7D58-4BBD-B04B-961B0E3DB6F9}|NonogramView\\NonogramView.csproj|solutionrelative:nonogramview\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{38578329-A15C-8223-CEA1-EAB6C059E3FB}|NonogramView\\NonogramView.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogramview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38578329-A15C-8223-CEA1-EAB6C059E3FB}|NonogramView\\NonogramView.csproj|solutionrelative:nonogramview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{594DCA9F-6A4D-4CE1-AF9E-DA47A55A92C2}|NonogramModel\\NonogramModel.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogrammodel\\model\\nonogrammodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{594DCA9F-6A4D-4CE1-AF9E-DA47A55A92C2}|NonogramModel\\NonogramModel.csproj|solutionrelative:nonogrammodel\\model\\nonogrammodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{38578329-A15C-8223-CEA1-EAB6C059E3FB}|NonogramView\\NonogramView.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogramview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{38578329-A15C-8223-CEA1-EAB6C059E3FB}|NonogramView\\NonogramView.csproj|solutionrelative:nonogramview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{594DCA9F-6A4D-4CE1-AF9E-DA47A55A92C2}|NonogramModel\\NonogramModel.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogrammodel\\gamestate\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{594DCA9F-6A4D-4CE1-AF9E-DA47A55A92C2}|NonogramModel\\NonogramModel.csproj|solutionrelative:nonogrammodel\\gamestate\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{38578329-A15C-8223-CEA1-EAB6C059E3FB}|NonogramView\\NonogramView.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogramview\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38578329-A15C-8223-CEA1-EAB6C059E3FB}|NonogramView\\NonogramView.csproj|solutionrelative:nonogramview\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{594DCA9F-6A4D-4CE1-AF9E-DA47A55A92C2}|NonogramModel\\NonogramModel.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogrammodel\\model\\inonogrammodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{594DCA9F-6A4D-4CE1-AF9E-DA47A55A92C2}|NonogramModel\\NonogramModel.csproj|solutionrelative:nonogrammodel\\model\\inonogrammodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{594DCA9F-6A4D-4CE1-AF9E-DA47A55A92C2}|NonogramModel\\NonogramModel.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogrammodel\\gamestate\\igamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{594DCA9F-6A4D-4CE1-AF9E-DA47A55A92C2}|NonogramModel\\NonogramModel.csproj|solutionrelative:nonogrammodel\\gamestate\\igamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8150B7B-7D58-4BBD-B04B-961B0E3DB6F9}|NonogramView\\NonogramView.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogramview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E8150B7B-7D58-4BBD-B04B-961B0E3DB6F9}|NonogramView\\NonogramView.csproj|solutionrelative:nonogramview\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6D70FA00-94EE-4542-7AB1-49AC1FA2AB68}|NonogramModel\\NonogramModel.csproj|c:\\users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\nonogram\\nonogrammodel\\gamestates\\igamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D70FA00-94EE-4542-7AB1-49AC1FA2AB68}|NonogramModel\\NonogramModel.csproj|solutionrelative:nonogrammodel\\gamestates\\igamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,96 +30,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GameState.cs",
-              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\GameState\\GameState.cs",
-              "RelativeDocumentMoniker": "NonogramModel\\GameState\\GameState.cs",
-              "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\GameState\\GameState.cs",
-              "RelativeToolTip": "NonogramModel\\GameState\\GameState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-04T18:20:58.645Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IGameState.cs",
-              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\GameState\\IGameState.cs",
-              "RelativeDocumentMoniker": "NonogramModel\\GameState\\IGameState.cs",
-              "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\GameState\\IGameState.cs",
-              "RelativeToolTip": "NonogramModel\\GameState\\IGameState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-04T18:15:03.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "INonogramModel.cs",
-              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\Model\\INonogramModel.cs",
-              "RelativeDocumentMoniker": "NonogramModel\\Model\\INonogramModel.cs",
-              "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\Model\\INonogramModel.cs",
-              "RelativeToolTip": "NonogramModel\\Model\\INonogramModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-04T18:11:21.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NonogramModel.cs",
-              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\Model\\NonogramModel.cs",
-              "RelativeDocumentMoniker": "NonogramModel\\Model\\NonogramModel.cs",
-              "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\Model\\NonogramModel.cs",
-              "RelativeToolTip": "NonogramModel\\Model\\NonogramModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-04T18:04:46.288Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "NonogramView\\Form1.Designer.cs",
               "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\Form1.Designer.cs",
               "RelativeToolTip": "NonogramView\\Form1.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-04T18:03:38.439Z",
+              "WhenOpened": "2026-10-05T18:24:00.989Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\Form1.cs",
               "RelativeDocumentMoniker": "NonogramView\\Form1.cs",
               "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\Form1.cs",
               "RelativeToolTip": "NonogramView\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAuwF8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-04T18:03:20.849Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "GameState.cs",
+              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\GameStates\\GameState.cs",
+              "RelativeDocumentMoniker": "NonogramModel\\GameStates\\GameState.cs",
+              "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\GameStates\\GameState.cs",
+              "RelativeToolTip": "NonogramModel\\GameStates\\GameState.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAYwGUAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T18:20:58.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IGameState.cs",
+              "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\GameStates\\IGameState.cs",
+              "RelativeDocumentMoniker": "NonogramModel\\GameStates\\IGameState.cs",
+              "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\GameStates\\IGameState.cs",
+              "RelativeToolTip": "NonogramModel\\GameStates\\IGameState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T18:15:03.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\Form1.cs",
               "RelativeDocumentMoniker": "NonogramView\\Form1.cs",
               "ToolTip": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\Form1.cs [Design]",
               "RelativeToolTip": "NonogramView\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-04T17:51:22.435Z",
+              "WhenOpened": "2026-10-05T16:18:10.51Z",
               "EditorCaption": " [Design]"
             }
           ]

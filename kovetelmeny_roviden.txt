@@ -1,0 +1,16 @@
+n x n tábla (5x5, 10x10, 15x15)
+
+sor és oszlop számokkal
+
+élet, idő
+
+mező -> fehér, fekete, X
+- ha jó -> fekete less
+- ha rossz -> kizárt, -élet
+
+ha sor/oszlop kitöltött -> maradék kizárt, számsor halvány
+
+win/lose condition
+
+pausing
+
