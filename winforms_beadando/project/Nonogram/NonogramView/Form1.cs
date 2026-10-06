@@ -1,11 +1,13 @@
 using NonogramModel;
-using NonogramModel.GameStates;
+using NonogramModel.Model;
 
 namespace NonogramView
 {
     public partial class Form1 : Form
     {
         private IGameState? _gamestate;
+
+        private int boardSize;
 
         public Form1()
         {
@@ -21,8 +23,17 @@ namespace NonogramView
         List<Label> columnLabels = new();
         int btnSize;
 
+        bool gamePaused = false;
+
         private void NewSaveFileDialog(object? sender, EventArgs e)
         {
+            if (_gamestate != null)
+            {
+                (_gamestate as IDisposable)?.Dispose();
+            }
+
+            boardSize = 5;
+
             bool[] testImage =
             {
                 false, false, true, false, false,
@@ -32,9 +43,21 @@ namespace NonogramView
                 false, false, true, false, false
             };
 
+            playPauseButton.Enabled = true;
 
-            _gamestate = new GameState(5, testImage);
-            _gamestate.BoardChanged += OnBoardChanged;
+            gameTimer.Start();
+            timeCounterLabel.Text = "00:00";
+            liveCounterLabel.Text = "3";
+
+            _gamestate = new GameState(boardSize, testImage);
+            _gamestate.CellChanged += OnCellChanged;
+            _gamestate.LivesSet += OnLivesSet;
+            _gamestate.LoseCondition += OnGameLost;
+            _gamestate.WinCondition += OnGameWon;
+
+            _gamestate.RowCleared += OnRowCleared;
+            _gamestate.ColumnCleared += OnColumnCleared;
+
             buttons.Clear();
             rowLabels.Clear();
             columnLabels.Clear();
@@ -43,22 +66,17 @@ namespace NonogramView
             rowPanel.Controls.Clear();
             columnPanel.Controls.Clear();
 
-            btnSize = buttonPanel.Height / _gamestate.boardSize;
+            btnSize = buttonPanel.Height / boardSize;
 
 
             // Button Panel Setup
-            for (int y = 0; y < _gamestate.boardSize; y++)
+            for (int y = 0; y < boardSize; y++)
             {
-                for (int x = 0; x < _gamestate.boardSize; x++)
+                for (int x = 0; x < boardSize; x++)
                 {
                     Button btn = new Button { Width = btnSize, Height = btnSize };
                     btn.Location = new Point(x * btnSize, y * btnSize);
                     btn.Tag = $"{x}:{y}";
-
-                    if ((_gamestate.GetBoard(x,y) & 0b001) != 0)
-                    {
-                        btn.BackColor = Color.Black;
-                    }
 
                     btn.MouseDown += BoardBtnClick;
                     buttons.Add(btn);
@@ -67,7 +85,6 @@ namespace NonogramView
             }
 
             // Row Setup
-
             for (int y = 0; y < _gamestate.boardSize; y++)
             {
                 Label lbl = new Label
@@ -85,7 +102,6 @@ namespace NonogramView
             }
 
             // Column Setup
-
             for (int x = 0; x < _gamestate.boardSize; x++)
             {
                 Label lbl = new Label
@@ -103,29 +119,91 @@ namespace NonogramView
             }
         }
 
-        private void OnBoardChanged(object? sender, EventArgs e)
+
+
+        private void OnColumnCleared(object? sender, int e)
         {
-            foreach (var button in buttons)
+            columnLabels[e].ForeColor = SystemColors.ScrollBar;
+
+            for (int y = 0; y < boardSize; y++)
             {
-                string[] tag = button!.Tag!.ToString()!.Split(':');
-
-                int x, y;
-                int.TryParse(tag[0], out x);
-                int.TryParse(tag[1], out y);
-
-                int boardState = _gamestate!.GetBoard(x, y);
-
-                if ((boardState & 0b100) != 0)
+                int i = y * boardSize + e;
+                if (buttons[i].Enabled)
                 {
-                    button.BackColor = Color.Gray;
+                    buttons[i].Enabled = false;
+                    _gamestate!.SetBoard(e, y, CellCategory.EXCLUSION);
                 }
-                else if ((boardState & 0b010) != 0)
+            }
+        }
+
+        private void OnRowCleared(object? sender, int e)
+        {
+            rowLabels[e].ForeColor = SystemColors.ScrollBar;
+
+            for (int x = 0; x < boardSize; x++)
+            {
+                int i = e * boardSize + x;
+                if (buttons[i].Enabled)
                 {
-                    button.BackColor = Color.Black;
+                    buttons[i].Enabled = false;
+                    _gamestate!.SetBoard(x, e, CellCategory.EXCLUSION);
                 }
-                else
+            }
+        }
+
+        private void OnGameLost(object? sender, EventArgs e)
+        {
+            gameTimer.Stop();
+            playPauseButton.Enabled = false;
+
+            buttons.Clear();
+            rowLabels.Clear();
+            columnLabels.Clear();
+
+            buttonPanel.Controls.Clear();
+            rowPanel.Controls.Clear();
+            columnPanel.Controls.Clear();
+
+            MessageBox.Show("You have lost!", "Game Lost", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void OnGameWon(object? sender, EventArgs e)
+        {
+            gameTimer.Stop();
+
+            playPauseButton.Enabled = false;
+
+            MessageBox.Show("You've WON!", "Game Won", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void OnLivesSet(object? sender, int e)
+        {
+            liveCounterLabel.Text = e.ToString();
+        }
+
+        private void OnCellChanged(object? sender, CellChangeEventArgs e)
+        {
+            int i = e.y * boardSize + e.x;
+
+            if (i >= 0 && i < buttons.Count)
+            {
+                switch (e.category)
                 {
-                    button.BackColor = Color.White;
+                    case CellCategory.EXCLUSION:
+                        buttons[i].BackColor = Color.Gray;
+                        break;
+                    case CellCategory.SELECTION:
+                        buttons[i].BackColor = Color.Black;
+                        break;
+                    case CellCategory.ORIGINAL:
+                        buttons[i].BackColor = Color.Black;
+                        break;
+                    case CellCategory.INCORRECT:
+                        buttons[i].BackColor = Color.Gray;
+                        buttons[i].Enabled = false;
+                        break;
+                    default:
+                        break;
                 }
             }
         }
@@ -141,11 +219,11 @@ namespace NonogramView
 
             if (e.Button == MouseButtons.Left)
             {
-                _gamestate!.SetBoard(x, y, UserInputType.SELECTION);
+                _gamestate!.SetBoard(x, y, CellCategory.SELECTION);
             }
             else if (e.Button == MouseButtons.Right)
             {
-                _gamestate!.SetBoard(x, y, UserInputType.EXCLUSION);
+                _gamestate!.SetBoard(x, y, CellCategory.EXCLUSION);
             }
         }
 
@@ -157,6 +235,47 @@ namespace NonogramView
         private void OpenSaveFileDialog(object? sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void OnGameTimerTick(object sender, EventArgs e)
+        {
+            _gamestate!.TimeCounter++;
+            int seconds = _gamestate!.TimeCounter % 60;
+
+            int minutes = _gamestate!.TimeCounter / 60;
+
+            timeCounterLabel.Text = $"{minutes.ToString("00")}:{seconds.ToString("00")}";
+        }
+
+        private void OnGamePaused(object sender, EventArgs e)
+        {
+            if (gamePaused)
+            {
+                gamePaused = false;
+                gameTimer.Enabled = true;
+
+                playPauseButton.Text = "Pause";
+
+                foreach (var btn in buttons) btn.Show();
+
+                foreach (var lbl in rowLabels) lbl.Show();
+
+                foreach (var lbl in columnLabels) lbl.Show();
+
+            }
+            else
+            {
+                gamePaused = true;
+                gameTimer.Enabled = false;
+
+                playPauseButton.Text = "Play";
+
+                foreach (var btn in buttons) btn.Hide();
+
+                foreach (var lbl in rowLabels) lbl.Hide();
+
+                foreach (var lbl in columnLabels) lbl.Hide();
+            }
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             fileStripMenuItem = new ToolStripMenuItem();
             newStripMenuItem = new ToolStripMenuItem();
@@ -40,6 +41,8 @@
             liveCounterLabel = new Label();
             label2 = new Label();
             timeCounterLabel = new Label();
+            gameTimer = new System.Windows.Forms.Timer(components);
+            playPauseButton = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -102,6 +105,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.ControlText;
             label1.Location = new Point(12, 41);
             label1.Name = "label1";
             label1.Size = new Size(70, 30);
@@ -140,11 +144,29 @@
             timeCounterLabel.TabIndex = 7;
             timeCounterLabel.Text = "00:00";
             // 
+            // gameTimer
+            // 
+            gameTimer.Interval = 1000;
+            gameTimer.Tick += OnGameTimerTick;
+            // 
+            // playPauseButton
+            // 
+            playPauseButton.Enabled = false;
+            playPauseButton.Font = new Font("Segoe UI", 16F);
+            playPauseButton.Location = new Point(12, 123);
+            playPauseButton.Name = "playPauseButton";
+            playPauseButton.Size = new Size(144, 43);
+            playPauseButton.TabIndex = 8;
+            playPauseButton.Text = "Pause";
+            playPauseButton.UseVisualStyleBackColor = true;
+            playPauseButton.Click += OnGamePaused;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 711);
+            Controls.Add(playPauseButton);
             Controls.Add(timeCounterLabel);
             Controls.Add(label2);
             Controls.Add(liveCounterLabel);
@@ -175,5 +197,7 @@
         private Label liveCounterLabel;
         private Label label2;
         private Label timeCounterLabel;
+        private System.Windows.Forms.Timer gameTimer;
+        private Button playPauseButton;
     }
 }
