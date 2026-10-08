@@ -1,15 +1,18 @@
-﻿using System;
+﻿using NonogramModel.Persistence;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace NonogramModel.Model
 {
-    public class GameState : IGameState, IDisposable
+    public class GameState : IGameState
     {
-        public int LivesCounter { get; set; }
-        public int TimeCounter { get; set; }
+        public int ElapsedTime { get; set; }
 
-        public int boardSize { get; }
+        private readonly int _boardSize;
+        private int _livesCounter;
+        private int[] _boardData;
+
 
         public event EventHandler<int>? LivesSet;
         public event EventHandler<CellChangeEventArgs>? CellChanged;
@@ -19,64 +22,68 @@ namespace NonogramModel.Model
         public event EventHandler<int>? ColumnCleared;
 
         /* Board bitformat
-        0b000
-        0b|exclusion|selection|original|
+        0b0000
+        0b|permanent exclusion|exclusion|selection|original|
         */
 
-        int[] board;
 
-        public GameState(int _boardSize, bool[] image)
+        public GameState(NonogramFileData data)
         {
-            LivesCounter = 3;
-            TimeCounter = 0;
-            boardSize = _boardSize;
-            board = new int[boardSize*boardSize];
-
-            for (int i = 0; i < image.Length; i++)
+            if (data.Board.Length != data.BoardSize*data.BoardSize)
             {
-                board[i] = (image[i]) ? 0b001 : 0b000;
+                throw new ArgumentOutOfRangeException("Supplied board size and actual board size do not match");
             }
+
+            _livesCounter = data.Lives;
+            _boardSize = data.BoardSize;
+            _boardData = data.Board;
+            ElapsedTime = data.ElapsedTime;
         }
 
-        public int GetBoard(int x, int y)
+        int _getBoard(int x, int y)
         {
-            int i = y * boardSize + x;
-            return board[i];
+            int i = y * _boardSize + x;
+            return _boardData[i];
         }
 
         public void SetBoard(int x, int y, CellCategory type)
         {
-            int i = y * boardSize + x;
-            bool originalBitFlag = (board[i] & 0b001) != 0;
+            int i = y * _boardSize + x;
 
-            if (type == CellCategory.EXCLUSION)
+            switch (type)
             {
-                // Kizárás (jobb klikk)
-                if (board[i] != 0b011)
-                {
-                    board[i] = board[i] | 0b100;
-                    CellChanged?.Invoke(this, new CellChangeEventArgs(x, y, CellCategory.EXCLUSION));
-                }
-            }
-            else if (type == CellCategory.SELECTION)
-            {
-                // Jelölés (bal klikk)
-                if (originalBitFlag)
-                {
-                    // Jelölés helyes
-                    board[i] = 0b011;
-                    CellChanged?.Invoke(this, new CellChangeEventArgs(x, y, CellCategory.SELECTION));
-                    CheckCompletion();
-                }
-                else
-                {
-                    // Jelölés helytelen
-                    board[i] = board[i] | 0b100;
-                    CellChanged?.Invoke(this, new CellChangeEventArgs(x, y, CellCategory.INCORRECT));
-                    DecreaseLives();
-                }
-            }
+                case CellCategory.EXCLUSION:
+                    _boardData[i] = _boardData[i] ^ 0b0100;
 
+                    if ( (_boardData[i] & 0b0100) == 0 ) CellChanged?.Invoke(this, new CellChangeEventArgs(x, y, CellCategory.EMPTY));
+                    else CellChanged?.Invoke(this, new CellChangeEventArgs(x, y, CellCategory.EXCLUSION));
+                    _checkCompletion();
+
+
+                    break;
+                case CellCategory.SELECTION:
+                    if ( (_boardData[i] & 0b0001) != 0 )
+                    {
+                        // Selection correct
+                        _boardData[i] = 0b011;
+                        CellChanged?.Invoke(this, new CellChangeEventArgs(x, y, CellCategory.SELECTION));
+                        _checkCompletion();
+                    }
+                    else
+                    {
+                        // Selection incorrect, permanently excluded
+                        _boardData[i] = 0b1000;
+                        CellChanged?.Invoke(this, new CellChangeEventArgs(x, y, CellCategory.PERMANENT_EXCLUSION));
+                        _decreaseLives();
+                    }
+                    break;
+                case CellCategory.PERMANENT_EXCLUSION:
+                    _boardData[i] = 0b1000;
+                    CellChanged?.Invoke(this, new CellChangeEventArgs(x, y, CellCategory.PERMANENT_EXCLUSION));
+                    break;
+                default:
+                    break;
+            }
         }
 
         public string GetRowNumbers(int y)
@@ -84,9 +91,9 @@ namespace NonogramModel.Model
             StringBuilder sb = new StringBuilder();
             int continuity = 0;
 
-            for (int x = 0; x < boardSize; x++)
+            for (int x = 0; x < _boardSize; x++)
             {
-                if ( (GetBoard(x,y) & 0b001) != 0)
+                if ( (_getBoard(x,y) & 0b001) != 0)
                 {
                     continuity++;
                 }
@@ -97,7 +104,7 @@ namespace NonogramModel.Model
                 }
             }
 
-            if (continuity > 0) sb.Append(continuity.ToString());
+            if (continuity > 0) sb.Append(continuity);
 
             return sb.ToString();
         }
@@ -107,9 +114,9 @@ namespace NonogramModel.Model
             StringBuilder sb = new StringBuilder();
             int continuity = 0;
 
-            for (int y = 0; y < boardSize; y++)
+            for (int y = 0; y < _boardSize; y++)
             {
-                if ((GetBoard(x, y) & 0b001) != 0)
+                if ((_getBoard(x, y) & 0b001) != 0)
                 {
                     continuity++;
                 }
@@ -120,35 +127,35 @@ namespace NonogramModel.Model
                 }
             }
 
-            if (continuity > 0) sb.Append(continuity.ToString());
+            if (continuity > 0) sb.Append(continuity);
 
             return sb.ToString();
         }
 
-        private void DecreaseLives()
+        private void _decreaseLives()
         {
 
-            LivesCounter--;
-            LivesSet?.Invoke(this, LivesCounter);
+            _livesCounter--;
+            LivesSet?.Invoke(this, _livesCounter);
 
-            if (LivesCounter == 0)
+            if (_livesCounter == 0)
             {
                 LoseCondition?.Invoke(this, EventArgs.Empty);
             }
         }
 
-        private void CheckCompletion()
+        private void _checkCompletion()
         {
             // C# alapból 0-ra inicializálja ilyenkor a tömb elemeit, tehát ez egy legális manőver
-            int[] completedRows = new int[boardSize];
-            int[] completedColumns = new int[boardSize];
+            int[] completedRows = new int[_boardSize];
+            int[] completedColumns = new int[_boardSize];
             int entireBoardCompletion = 0;
 
-            for (int x = 0; x < boardSize; x++)
+            for (int x = 0; x < _boardSize; x++)
             {
-                for (int y = 0; y < boardSize; y++)
+                for (int y = 0; y < _boardSize; y++)
                 {
-                    int boardValue = GetBoard(x, y);
+                    int boardValue = _getBoard(x, y);
                     if ( ((boardValue & 0b010) != 0 && (boardValue & 0b001) != 0) || (boardValue & 0b001) == 0 )
                     {
                         completedRows[y]++;
@@ -160,29 +167,47 @@ namespace NonogramModel.Model
 
             for (int i = 0; i < completedRows.Length; i++)
             {
-                if (completedRows[i] == boardSize)
+                if (completedRows[i] == _boardSize)
                 {
                     RowCleared?.Invoke(this, i);
+
+                    for (int x = 0; x < _boardSize; x++)
+                    {
+                        if ((_getBoard(x, i) & 0b1000) == 0 && (_getBoard(x, i) & 0b0001) != 1)
+                        {
+                            SetBoard(x, i, CellCategory.PERMANENT_EXCLUSION);
+                        }
+                    }
                 }
             }
 
             for (int i = 0; i < completedColumns.Length; i++)
             {
-                if (completedColumns[i] == boardSize)
+                if (completedColumns[i] == _boardSize)
                 {
                     ColumnCleared?.Invoke(this, i);
+
+                    for (int y = 0; y < _boardSize; y++)
+                    {
+                        if ((_getBoard(i, y) & 0b1000) == 0 && (_getBoard(i, y) & 0b0001) != 1)
+                        {
+                            SetBoard(i, y, CellCategory.PERMANENT_EXCLUSION);
+                        }
+                    }
                 }
             }
 
-            if (entireBoardCompletion == boardSize*boardSize)
+            if (entireBoardCompletion == _boardSize*_boardSize)
             {
                 WinCondition?.Invoke(this, EventArgs.Empty);
             }
         }
 
-        public void Dispose()
+        public void SaveGame(INonogramFileManager fileManager)
         {
-            
+            fileManager.Save(new NonogramFileData(
+                _boardData, _livesCounter, ElapsedTime, _boardSize    
+            ));
         }
     }
 }

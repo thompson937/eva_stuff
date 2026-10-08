@@ -1,13 +1,20 @@
-using NonogramModel;
 using NonogramModel.Model;
+using NonogramModel.Persistence;
+using System.Xml.Linq;
 
 namespace NonogramView
 {
     public partial class Form1 : Form
     {
-        private IGameState? _gamestate;
+        IGameState? _gamestate;
+        int _boardSize;
+        int _btnSize;
+        bool _gamePaused;
 
-        private int boardSize;
+        List<Button> _buttons = new();
+        List<Label> _rowLabels = new();
+        List<Label> _columnLabels = new();
+
 
         public Form1()
         {
@@ -15,154 +22,99 @@ namespace NonogramView
 
             openStripMenuItem.Click += OpenSaveFileDialog;
             saveStripMenuItem.Click += SaveSaveFileDialog;
-            newStripMenuItem.Click += NewSaveFileDialog;
+
+            _gamePaused = false;
         }
 
-        List<Button> buttons = new();
-        List<Label> rowLabels = new();
-        List<Label> columnLabels = new();
-        int btnSize;
-
-        bool gamePaused = false;
-
-        private void NewSaveFileDialog(object? sender, EventArgs e)
+        private void SaveSaveFileDialog(object? sender, EventArgs e)
         {
-            if (_gamestate != null)
+            using (SaveFileDialog sf = new SaveFileDialog())
             {
-                (_gamestate as IDisposable)?.Dispose();
-            }
+                sf.InitialDirectory = Environment.CurrentDirectory;
+                sf.Filter = "Nonogram Save Files (*.ngm)|*.ngm";
+                sf.FileName = "new_save.ngm";
+                sf.RestoreDirectory = true;
 
-            boardSize = 5;
-
-            bool[] testImage =
-            {
-                false, false, true, false, false,
-                false, true, false, true, false,
-                true, false, false, false, true,
-                true, true, false, true, true,
-                false, false, true, false, false
-            };
-
-            playPauseButton.Enabled = true;
-
-            gameTimer.Start();
-            timeCounterLabel.Text = "00:00";
-            liveCounterLabel.Text = "3";
-
-            _gamestate = new GameState(boardSize, testImage);
-            _gamestate.CellChanged += OnCellChanged;
-            _gamestate.LivesSet += OnLivesSet;
-            _gamestate.LoseCondition += OnGameLost;
-            _gamestate.WinCondition += OnGameWon;
-
-            _gamestate.RowCleared += OnRowCleared;
-            _gamestate.ColumnCleared += OnColumnCleared;
-
-            buttons.Clear();
-            rowLabels.Clear();
-            columnLabels.Clear();
-
-            buttonPanel.Controls.Clear();
-            rowPanel.Controls.Clear();
-            columnPanel.Controls.Clear();
-
-            btnSize = buttonPanel.Height / boardSize;
-
-
-            // Button Panel Setup
-            for (int y = 0; y < boardSize; y++)
-            {
-                for (int x = 0; x < boardSize; x++)
+                if (sf.ShowDialog() == DialogResult.OK)
                 {
-                    Button btn = new Button { Width = btnSize, Height = btnSize };
-                    btn.Location = new Point(x * btnSize, y * btnSize);
-                    btn.Tag = $"{x}:{y}";
+                    try
+                    {
+                        INonogramFileManager fm = new NonogramFileManager(sf.FileName);
+                        _gamestate!.SaveGame(fm);
 
-                    btn.MouseDown += BoardBtnClick;
-                    buttons.Add(btn);
-                    buttonPanel.Controls.Add(btn);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occured:\n:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-
-            // Row Setup
-            for (int y = 0; y < _gamestate.boardSize; y++)
-            {
-                Label lbl = new Label
-                {
-                    AutoSize = true,
-                    Location = new Point(0, y * btnSize),
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Tag = y.ToString(),
-                    Font = new Font("Consolas", btnSize / 2, FontStyle.Bold, GraphicsUnit.Pixel),
-                    Text = _gamestate.GetRowNumbers(y)
-                };
-
-                rowLabels.Add(lbl);
-                rowPanel.Controls.Add(lbl);
-            }
-
-            // Column Setup
-            for (int x = 0; x < _gamestate.boardSize; x++)
-            {
-                Label lbl = new Label
-                {
-                    AutoSize = true,
-                    Location = new Point(x * btnSize, 0),
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Tag = x.ToString(),
-                    Font = new Font("Consolas", btnSize / 2, FontStyle.Bold, GraphicsUnit.Pixel),
-                    Text = _gamestate.GetColumnNumbers(x)
-                };
-
-                columnLabels.Add(lbl);
-                columnPanel.Controls.Add(lbl);
-            }
         }
 
+        private void OpenSaveFileDialog(object? sender, EventArgs e)
+        {
+            using (OpenFileDialog of = new OpenFileDialog())
+            {
+                of.InitialDirectory = Environment.CurrentDirectory;
+                of.Filter = "Nonogram Save Files (*.ngm)|*.ngm";
+                of.RestoreDirectory = true;
 
+                if (of.ShowDialog() == DialogResult.OK)
+                {
+                    if (System.IO.Path.GetExtension(of.FileName) != ".ngm")
+                    {
+                        MessageBox.Show("Unsupported file Format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    try
+                    {
+                        INonogramFileManager fm = new NonogramFileManager(of.FileName);
+                        NonogramFileData data = fm.Load();
+
+                        _boardSize = data.BoardSize;
+                        liveCounterLabel.Text = data.Lives.ToString();
+                        int seconds = data.ElapsedTime % 60;
+                        int minutes = data.ElapsedTime / 60;
+
+                        timeCounterLabel.Text = $"{minutes.ToString("00")}:{seconds.ToString("00")}";
+
+                        _gamestate = new GameState(data);
+
+                        BuildBoard(data);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occured:\n:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+
+            }
+        }
 
         private void OnColumnCleared(object? sender, int e)
         {
-            columnLabels[e].ForeColor = SystemColors.ScrollBar;
-
-            for (int y = 0; y < boardSize; y++)
-            {
-                int i = y * boardSize + e;
-                if (buttons[i].Enabled)
-                {
-                    buttons[i].Enabled = false;
-                    _gamestate!.SetBoard(e, y, CellCategory.EXCLUSION);
-                }
-            }
+            _columnLabels[e].ForeColor = SystemColors.ScrollBar;
         }
 
         private void OnRowCleared(object? sender, int e)
         {
-            rowLabels[e].ForeColor = SystemColors.ScrollBar;
-
-            for (int x = 0; x < boardSize; x++)
-            {
-                int i = e * boardSize + x;
-                if (buttons[i].Enabled)
-                {
-                    buttons[i].Enabled = false;
-                    _gamestate!.SetBoard(x, e, CellCategory.EXCLUSION);
-                }
-            }
+            _rowLabels[e].ForeColor = SystemColors.ScrollBar;
         }
 
         private void OnGameLost(object? sender, EventArgs e)
         {
             gameTimer.Stop();
             playPauseButton.Enabled = false;
+            saveStripMenuItem.Enabled = false;
 
-            buttons.Clear();
-            rowLabels.Clear();
-            columnLabels.Clear();
+            foreach (var btn in _buttons)
+            {
+                btn.Enabled = false;
+            }
 
-            buttonPanel.Controls.Clear();
-            rowPanel.Controls.Clear();
-            columnPanel.Controls.Clear();
 
             MessageBox.Show("You have lost!", "Game Lost", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
@@ -170,8 +122,8 @@ namespace NonogramView
         private void OnGameWon(object? sender, EventArgs e)
         {
             gameTimer.Stop();
-
             playPauseButton.Enabled = false;
+            saveStripMenuItem.Enabled = false;
 
             MessageBox.Show("You've WON!", "Game Won", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -183,32 +135,39 @@ namespace NonogramView
 
         private void OnCellChanged(object? sender, CellChangeEventArgs e)
         {
-            int i = e.y * boardSize + e.x;
+            int i = e.y * _boardSize + e.x;
 
-            if (i >= 0 && i < buttons.Count)
+            SetButtonAppearance(i, e.category);
+        }
+
+        private void SetButtonAppearance(int i, CellCategory category)
+        {
+            switch (category)
             {
-                switch (e.category)
-                {
-                    case CellCategory.EXCLUSION:
-                        buttons[i].BackColor = Color.Gray;
-                        break;
-                    case CellCategory.SELECTION:
-                        buttons[i].BackColor = Color.Black;
-                        break;
-                    case CellCategory.ORIGINAL:
-                        buttons[i].BackColor = Color.Black;
-                        break;
-                    case CellCategory.INCORRECT:
-                        buttons[i].BackColor = Color.Gray;
-                        buttons[i].Enabled = false;
-                        break;
-                    default:
-                        break;
-                }
+                case CellCategory.EXCLUSION:
+                    _buttons[i].Text = "X";
+                    _buttons[i].BackColor = Color.White;
+                    break;
+                case CellCategory.SELECTION:
+                    _buttons[i].Text = String.Empty;
+                    _buttons[i].BackColor = Color.Black;
+                    _buttons[i].Enabled = false;
+                    break;
+                case CellCategory.PERMANENT_EXCLUSION:
+                    _buttons[i].Text = "X";
+                    _buttons[i].BackColor = Color.White;
+                    _buttons[i].Enabled = false;
+                    break;
+                case CellCategory.EMPTY:
+                    _buttons[i].Text = String.Empty;
+                    _buttons[i].BackColor = Color.White;
+                    break;
+                default:
+                    break;
             }
         }
 
-        private void BoardBtnClick(object? sender, MouseEventArgs e)
+        private void BoardButton_Click(object? sender, MouseEventArgs e)
         {
             var btn = sender as Button;
             string[] tag = btn!.Tag!.ToString()!.Split(':');
@@ -227,55 +186,199 @@ namespace NonogramView
             }
         }
 
-        private void SaveSaveFileDialog(object? sender, EventArgs e)
+        private void BoardButton_Drag(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
+            var btn = sender as Button;
+            string[] tag = btn!.Tag!.ToString()!.Split(':');
 
-        private void OpenSaveFileDialog(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
+            int x, y;
+            int.TryParse(tag[0], out x);
+            int.TryParse(tag[1], out y);
+
+            if (Control.MouseButtons == MouseButtons.Left)
+            {
+                _gamestate!.SetBoard(x, y, CellCategory.SELECTION);
+            }
+
+            if (Control.MouseButtons == MouseButtons.Right)
+            {
+                _gamestate!.SetBoard(x, y, CellCategory.EXCLUSION);
+            }
         }
 
         private void OnGameTimerTick(object sender, EventArgs e)
         {
-            _gamestate!.TimeCounter++;
-            int seconds = _gamestate!.TimeCounter % 60;
-
-            int minutes = _gamestate!.TimeCounter / 60;
+            _gamestate!.ElapsedTime++;
+            int seconds = _gamestate.ElapsedTime % 60;
+            int minutes = _gamestate.ElapsedTime / 60;
 
             timeCounterLabel.Text = $"{minutes.ToString("00")}:{seconds.ToString("00")}";
         }
 
         private void OnGamePaused(object sender, EventArgs e)
         {
-            if (gamePaused)
+            if (_gamePaused)
             {
-                gamePaused = false;
+                _gamePaused = false;
                 gameTimer.Enabled = true;
 
                 playPauseButton.Text = "Pause";
 
-                foreach (var btn in buttons) btn.Show();
-
-                foreach (var lbl in rowLabels) lbl.Show();
-
-                foreach (var lbl in columnLabels) lbl.Show();
+                foreach (var btn in _buttons) btn.Show();
+                foreach (var lbl in _rowLabels) lbl.Show();
+                foreach (var lbl in _columnLabels) lbl.Show();
 
             }
             else
             {
-                gamePaused = true;
+                _gamePaused = true;
                 gameTimer.Enabled = false;
 
                 playPauseButton.Text = "Play";
 
-                foreach (var btn in buttons) btn.Hide();
-
-                foreach (var lbl in rowLabels) lbl.Hide();
-
-                foreach (var lbl in columnLabels) lbl.Hide();
+                foreach (var btn in _buttons) btn.Hide();
+                foreach (var lbl in _rowLabels) lbl.Hide();
+                foreach (var lbl in _columnLabels) lbl.Hide();
             }
+        }
+
+        private void BuildBoard(NonogramFileData data)
+        {
+            _gamestate!.CellChanged += OnCellChanged;
+            _gamestate!.LivesSet += OnLivesSet;
+            _gamestate!.LoseCondition += OnGameLost;
+            _gamestate!.WinCondition += OnGameWon;
+
+            _gamestate!.RowCleared += OnRowCleared;
+            _gamestate!.ColumnCleared += OnColumnCleared;
+
+            _buttons.Clear();
+            _rowLabels.Clear();
+            _columnLabels.Clear();
+
+            buttonPanel.Controls.Clear();
+            rowPanel.Controls.Clear();
+            columnPanel.Controls.Clear();
+
+            _boardSize = data.BoardSize;
+
+            _btnSize = buttonPanel.Height / _boardSize;
+
+            gameTimer.Start();
+            playPauseButton.Enabled = true;
+            saveStripMenuItem.Enabled = true;
+
+            // Button Panel Setup
+            for (int y = 0; y < _boardSize; y++)
+            {
+                for (int x = 0; x < _boardSize; x++)
+                {
+                    int i = y * _boardSize + x;
+
+                    Button btn = new Button
+                    {
+                        Width = _btnSize,
+                        Height = _btnSize,
+                        Location = new Point(x * _btnSize, y * _btnSize),
+                        Font = new Font("Consolas", _btnSize / 2, FontStyle.Bold, GraphicsUnit.Pixel),
+                        Tag = $"{x}:{y}",
+                        Capture = false
+                    };
+
+                    btn.MouseDown += BoardButton_Click;
+                    btn.MouseEnter += BoardButton_Drag;
+                    _buttons.Add(btn);
+                    buttonPanel.Controls.Add(btn);
+
+                    bool selected = (data.Board[i] & 0b0010) != 0;
+                    bool excluded = (data.Board[i] & 0b0100) != 0;
+                    bool incorrect = (data.Board[i] & 0b1000) != 0;
+
+                    if (excluded) SetButtonAppearance(i, CellCategory.EXCLUSION);
+                    if (incorrect) SetButtonAppearance(i, CellCategory.PERMANENT_EXCLUSION);
+                    if (selected) SetButtonAppearance(i, CellCategory.SELECTION);
+
+                }
+            }
+
+            // Row Setup
+            for (int y = 0; y < _boardSize; y++)
+            {
+                Label lbl = new Label
+                {
+                    AutoSize = true,
+                    Location = new Point(0, y * _btnSize),
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Tag = y.ToString(),
+                    Font = new Font("Consolas", _btnSize / 2, FontStyle.Bold, GraphicsUnit.Pixel),
+                    Text = _gamestate!.GetRowNumbers(y)
+                };
+
+                _rowLabels.Add(lbl);
+                rowPanel.Controls.Add(lbl);
+            }
+
+            // Column Setup
+            for (int x = 0; x < _boardSize; x++)
+            {
+                Label lbl = new Label
+                {
+                    AutoSize = true,
+                    Location = new Point(x * _btnSize, 0),
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Tag = x.ToString(),
+                    Font = new Font("Consolas", _btnSize / 2, FontStyle.Bold, GraphicsUnit.Pixel),
+                    Text = _gamestate!.GetColumnNumbers(x)
+                };
+
+                _columnLabels.Add(lbl);
+                columnPanel.Controls.Add(lbl);
+            }
+        }
+
+
+        private void predefinedStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var stripItem = sender as ToolStripItem;
+
+            if (stripItem != null && stripItem.Tag != null)
+            {
+                INonogramFileManager fm = new NonogramFileManager("Input\\" + stripItem.Tag + ".ngm");
+                NonogramFileData data = fm.Load();
+
+                _gamestate = new GameState(data);
+                BuildBoard(data);
+            }
+        }
+
+
+        private void randomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var stripItem = sender as ToolStripItem;
+
+            if (stripItem != null && stripItem.Tag != null)
+            {
+                int boardSize;
+                int.TryParse(stripItem.Tag.ToString(), out boardSize);
+
+                int[] randomBoard = new int[boardSize * boardSize];
+
+                Random random = new Random();
+
+                for (int i = 0; i < randomBoard.Length; i++)
+                {
+                    randomBoard[i] = random.Next(2);
+                }
+                NonogramFileData data = new NonogramFileData(randomBoard, 3, 0, boardSize);
+
+                _gamestate = new GameState(data);
+                BuildBoard(data);
+            }
+        }
+
+        private void exitStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

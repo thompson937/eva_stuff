@@ -1,16 +1,18 @@
 n x n tábla (5x5, 10x10, 15x15)
 
-sor és oszlop számokkal
+save/load
 
-élet, idő
+sor és oszlop számokkal DONE
 
-mező -> fehér, fekete, X
-- ha jó -> fekete less
-- ha rossz -> kizárt, -élet
+élet, idő DONE
 
-ha sor/oszlop kitöltött -> maradék kizárt, számsor halvány
+mező -> fehér, fekete, X DONE
+- ha jó -> fekete less DONE
+- ha rossz -> kizárt, -élet DONE
 
-win/lose condition
+ha sor/oszlop kitöltött -> maradék kizárt, számsor halvány DONE
 
-pausing
+win/lose condition DONE
+
+pausing DONE
 

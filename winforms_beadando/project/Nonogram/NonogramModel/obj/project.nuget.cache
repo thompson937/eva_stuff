@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "qr7VoUF726s=",
+  "dgSpecHash": "AsNqiuxHJsk=",
   "success": true,
   "projectFilePath": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\NonogramModel.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\thoma\\.nuget\\packages\\elte.fi.saruleset\\3.2.1\\elte.fi.saruleset.3.2.1.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\microsoft.codeanalysis.bannedapianalyzers\\3.3.4\\microsoft.codeanalysis.bannedapianalyzers.3.3.4.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\roslynator.analyzers\\4.14.0\\roslynator.analyzers.4.14.0.nupkg.sha512",
+    "C:\\Users\\thoma\\.nuget\\packages\\sonaranalyzer.csharp\\10.15.0.120848\\sonaranalyzer.csharp.10.15.0.120848.nupkg.sha512"
+  ],
   "logs": []
 }

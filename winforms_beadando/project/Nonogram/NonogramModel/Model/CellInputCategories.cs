@@ -6,6 +6,6 @@ namespace NonogramModel.Model
 {
     public enum CellCategory
     {
-        EXCLUSION, SELECTION, ORIGINAL, INCORRECT
+        EXCLUSION, SELECTION, PERMANENT_EXCLUSION, EMPTY
     }
 }

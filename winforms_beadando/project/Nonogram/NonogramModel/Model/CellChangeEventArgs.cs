@@ -2,9 +2,9 @@
 {
     public class CellChangeEventArgs : EventArgs
     {
-        public int x;
-        public int y;
-        public CellCategory category;
+        public readonly int x;
+        public readonly int y;
+        public readonly CellCategory category;
 
         public CellChangeEventArgs(int _x, int _y, CellCategory _category)
         {

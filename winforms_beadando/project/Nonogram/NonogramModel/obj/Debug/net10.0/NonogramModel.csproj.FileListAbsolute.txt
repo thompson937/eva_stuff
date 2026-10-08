@@ -11,3 +11,12 @@ C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\ob
 C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\NonogramModel.pdb
 C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\ref\NonogramModel.dll
 C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\obj\Debug\net10.0\Nonogram.9EB64116.Up2Date
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\Input\bomb_5x5.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\Input\book_10x10.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\Input\donut_10x10.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\Input\goomba_15x15.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\Input\heart_10x10.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\Input\leaf_5x5.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\Input\smiley_5x5.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\Input\star_15x15.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramModel\bin\Debug\net10.0\Input\wardrobe_15x15.ngm

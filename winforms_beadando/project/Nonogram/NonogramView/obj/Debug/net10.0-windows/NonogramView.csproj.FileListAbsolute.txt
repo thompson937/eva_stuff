@@ -20,3 +20,12 @@ C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\obj
 C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\bin\Debug\net10.0-windows\NonogramModel.dll
 C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\bin\Debug\net10.0-windows\NonogramModel.pdb
 C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\obj\Debug\net10.0-windows\NonogramView.csproj.AssemblyReference.cache
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\bin\Debug\net10.0-windows\Input\bomb_5x5.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\bin\Debug\net10.0-windows\Input\book_10x10.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\bin\Debug\net10.0-windows\Input\donut_10x10.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\bin\Debug\net10.0-windows\Input\goomba_15x15.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\bin\Debug\net10.0-windows\Input\heart_10x10.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\bin\Debug\net10.0-windows\Input\leaf_5x5.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\bin\Debug\net10.0-windows\Input\smiley_5x5.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\bin\Debug\net10.0-windows\Input\star_15x15.ngm
+C:\Users\thoma\eva\eva_stuff\winforms_beadando\project\Nonogram\NonogramView\bin\Debug\net10.0-windows\Input\wardrobe_15x15.ngm

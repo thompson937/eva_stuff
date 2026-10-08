@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NonogramModel.Persistence;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,13 +7,11 @@ namespace NonogramModel.Model
 {
     public interface IGameState
     {
-        int LivesCounter { get; set; }
-        int TimeCounter { get; set; }
+        int ElapsedTime { get; set; }
 
-        int boardSize { get; }
-
-        int GetBoard(int x, int y);
         void SetBoard(int x, int y, CellCategory type);
+
+        void SaveGame(INonogramFileManager fileManager);
 
         string GetRowNumbers(int y);
         string GetColumnNumbers(int x);

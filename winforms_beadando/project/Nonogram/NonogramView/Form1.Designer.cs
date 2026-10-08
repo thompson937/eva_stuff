@@ -32,6 +32,21 @@
             menuStrip1 = new MenuStrip();
             fileStripMenuItem = new ToolStripMenuItem();
             newStripMenuItem = new ToolStripMenuItem();
+            x5ToolStripMenuItem = new ToolStripMenuItem();
+            leafToolStripMenuItem = new ToolStripMenuItem();
+            smileyToolStripMenuItem = new ToolStripMenuItem();
+            bombToolStripMenuItem = new ToolStripMenuItem();
+            randomToolStripMenuItem = new ToolStripMenuItem();
+            x10ToolStripMenuItem = new ToolStripMenuItem();
+            bookToolStripMenuItem = new ToolStripMenuItem();
+            heartToolStripMenuItem = new ToolStripMenuItem();
+            donutToolStripMenuItem = new ToolStripMenuItem();
+            randomToolStripMenuItem1 = new ToolStripMenuItem();
+            x15ToolStripMenuItem = new ToolStripMenuItem();
+            goombaToolStripMenuItem = new ToolStripMenuItem();
+            starToolStripMenuItem = new ToolStripMenuItem();
+            wardrobeToolStripMenuItem = new ToolStripMenuItem();
+            randomToolStripMenuItem2 = new ToolStripMenuItem();
             openStripMenuItem = new ToolStripMenuItem();
             saveStripMenuItem = new ToolStripMenuItem();
             buttonPanel = new Panel();
@@ -43,6 +58,7 @@
             timeCounterLabel = new Label();
             gameTimer = new System.Windows.Forms.Timer(components);
             playPauseButton = new Button();
+            exitStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,27 +73,149 @@
             // 
             // fileStripMenuItem
             // 
-            fileStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newStripMenuItem, openStripMenuItem, saveStripMenuItem });
+            fileStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newStripMenuItem, openStripMenuItem, saveStripMenuItem, exitStripMenuItem });
             fileStripMenuItem.Name = "fileStripMenuItem";
             fileStripMenuItem.Size = new Size(37, 20);
             fileStripMenuItem.Text = "File";
             // 
             // newStripMenuItem
             // 
+            newStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { x5ToolStripMenuItem, x10ToolStripMenuItem, x15ToolStripMenuItem });
             newStripMenuItem.Name = "newStripMenuItem";
-            newStripMenuItem.Size = new Size(112, 22);
+            newStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
+            newStripMenuItem.Size = new Size(180, 22);
             newStripMenuItem.Text = "New...";
+            // 
+            // x5ToolStripMenuItem
+            // 
+            x5ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { leafToolStripMenuItem, smileyToolStripMenuItem, bombToolStripMenuItem, randomToolStripMenuItem });
+            x5ToolStripMenuItem.Name = "x5ToolStripMenuItem";
+            x5ToolStripMenuItem.Size = new Size(103, 22);
+            x5ToolStripMenuItem.Text = "5x5";
+            // 
+            // leafToolStripMenuItem
+            // 
+            leafToolStripMenuItem.Name = "leafToolStripMenuItem";
+            leafToolStripMenuItem.Size = new Size(119, 22);
+            leafToolStripMenuItem.Tag = "leaf_5x5";
+            leafToolStripMenuItem.Text = "Leaf";
+            leafToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            // 
+            // smileyToolStripMenuItem
+            // 
+            smileyToolStripMenuItem.Name = "smileyToolStripMenuItem";
+            smileyToolStripMenuItem.Size = new Size(119, 22);
+            smileyToolStripMenuItem.Tag = "smiley_5x5";
+            smileyToolStripMenuItem.Text = "Smiley";
+            smileyToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            // 
+            // bombToolStripMenuItem
+            // 
+            bombToolStripMenuItem.Name = "bombToolStripMenuItem";
+            bombToolStripMenuItem.Size = new Size(119, 22);
+            bombToolStripMenuItem.Tag = "bomb_5x5";
+            bombToolStripMenuItem.Text = "Bomb";
+            bombToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            // 
+            // randomToolStripMenuItem
+            // 
+            randomToolStripMenuItem.Name = "randomToolStripMenuItem";
+            randomToolStripMenuItem.Size = new Size(119, 22);
+            randomToolStripMenuItem.Tag = "5";
+            randomToolStripMenuItem.Text = "Random";
+            randomToolStripMenuItem.Click += randomToolStripMenuItem_Click;
+            // 
+            // x10ToolStripMenuItem
+            // 
+            x10ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { bookToolStripMenuItem, heartToolStripMenuItem, donutToolStripMenuItem, randomToolStripMenuItem1 });
+            x10ToolStripMenuItem.Name = "x10ToolStripMenuItem";
+            x10ToolStripMenuItem.Size = new Size(103, 22);
+            x10ToolStripMenuItem.Text = "10x10";
+            // 
+            // bookToolStripMenuItem
+            // 
+            bookToolStripMenuItem.Name = "bookToolStripMenuItem";
+            bookToolStripMenuItem.Size = new Size(119, 22);
+            bookToolStripMenuItem.Tag = "book_10x10";
+            bookToolStripMenuItem.Text = "Book";
+            bookToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            // 
+            // heartToolStripMenuItem
+            // 
+            heartToolStripMenuItem.Name = "heartToolStripMenuItem";
+            heartToolStripMenuItem.Size = new Size(119, 22);
+            heartToolStripMenuItem.Tag = "heart_10x10";
+            heartToolStripMenuItem.Text = "Heart";
+            heartToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            // 
+            // donutToolStripMenuItem
+            // 
+            donutToolStripMenuItem.Name = "donutToolStripMenuItem";
+            donutToolStripMenuItem.Size = new Size(119, 22);
+            donutToolStripMenuItem.Tag = "donut_10x10";
+            donutToolStripMenuItem.Text = "Donut";
+            donutToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            // 
+            // randomToolStripMenuItem1
+            // 
+            randomToolStripMenuItem1.Name = "randomToolStripMenuItem1";
+            randomToolStripMenuItem1.Size = new Size(119, 22);
+            randomToolStripMenuItem1.Tag = "10";
+            randomToolStripMenuItem1.Text = "Random";
+            randomToolStripMenuItem1.Click += randomToolStripMenuItem_Click;
+            // 
+            // x15ToolStripMenuItem
+            // 
+            x15ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { goombaToolStripMenuItem, starToolStripMenuItem, wardrobeToolStripMenuItem, randomToolStripMenuItem2 });
+            x15ToolStripMenuItem.Name = "x15ToolStripMenuItem";
+            x15ToolStripMenuItem.Size = new Size(103, 22);
+            x15ToolStripMenuItem.Text = "15x15";
+            // 
+            // goombaToolStripMenuItem
+            // 
+            goombaToolStripMenuItem.Name = "goombaToolStripMenuItem";
+            goombaToolStripMenuItem.Size = new Size(126, 22);
+            goombaToolStripMenuItem.Tag = "goomba_15x15";
+            goombaToolStripMenuItem.Text = "Goomba";
+            goombaToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            // 
+            // starToolStripMenuItem
+            // 
+            starToolStripMenuItem.Name = "starToolStripMenuItem";
+            starToolStripMenuItem.Size = new Size(126, 22);
+            starToolStripMenuItem.Tag = "star_15x15";
+            starToolStripMenuItem.Text = "Star";
+            starToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            // 
+            // wardrobeToolStripMenuItem
+            // 
+            wardrobeToolStripMenuItem.Name = "wardrobeToolStripMenuItem";
+            wardrobeToolStripMenuItem.Size = new Size(126, 22);
+            wardrobeToolStripMenuItem.Tag = "wardrobe_15x15";
+            wardrobeToolStripMenuItem.Text = "Wardrobe";
+            wardrobeToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            // 
+            // randomToolStripMenuItem2
+            // 
+            randomToolStripMenuItem2.Name = "randomToolStripMenuItem2";
+            randomToolStripMenuItem2.Size = new Size(126, 22);
+            randomToolStripMenuItem2.Tag = "15";
+            randomToolStripMenuItem2.Text = "Random";
+            randomToolStripMenuItem2.Click += randomToolStripMenuItem_Click;
             // 
             // openStripMenuItem
             // 
             openStripMenuItem.Name = "openStripMenuItem";
-            openStripMenuItem.Size = new Size(112, 22);
-            openStripMenuItem.Text = "Open...";
+            openStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
+            openStripMenuItem.Size = new Size(180, 22);
+            openStripMenuItem.Text = "Load...";
             // 
             // saveStripMenuItem
             // 
+            saveStripMenuItem.Enabled = false;
             saveStripMenuItem.Name = "saveStripMenuItem";
-            saveStripMenuItem.Size = new Size(112, 22);
+            saveStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
+            saveStripMenuItem.Size = new Size(180, 22);
             saveStripMenuItem.Text = "Save...";
             // 
             // buttonPanel
@@ -161,6 +299,14 @@
             playPauseButton.UseVisualStyleBackColor = true;
             playPauseButton.Click += OnGamePaused;
             // 
+            // exitStripMenuItem
+            // 
+            exitStripMenuItem.Name = "exitStripMenuItem";
+            exitStripMenuItem.ShortcutKeys = Keys.Control | Keys.E;
+            exitStripMenuItem.Size = new Size(180, 22);
+            exitStripMenuItem.Text = "Exit...";
+            exitStripMenuItem.Click += exitStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -199,5 +345,21 @@
         private Label timeCounterLabel;
         private System.Windows.Forms.Timer gameTimer;
         private Button playPauseButton;
+        private ToolStripMenuItem x5ToolStripMenuItem;
+        private ToolStripMenuItem leafToolStripMenuItem;
+        private ToolStripMenuItem smileyToolStripMenuItem;
+        private ToolStripMenuItem bombToolStripMenuItem;
+        private ToolStripMenuItem randomToolStripMenuItem;
+        private ToolStripMenuItem x10ToolStripMenuItem;
+        private ToolStripMenuItem bookToolStripMenuItem;
+        private ToolStripMenuItem heartToolStripMenuItem;
+        private ToolStripMenuItem donutToolStripMenuItem;
+        private ToolStripMenuItem randomToolStripMenuItem1;
+        private ToolStripMenuItem x15ToolStripMenuItem;
+        private ToolStripMenuItem goombaToolStripMenuItem;
+        private ToolStripMenuItem starToolStripMenuItem;
+        private ToolStripMenuItem wardrobeToolStripMenuItem;
+        private ToolStripMenuItem randomToolStripMenuItem2;
+        private ToolStripMenuItem exitStripMenuItem;
     }
 }

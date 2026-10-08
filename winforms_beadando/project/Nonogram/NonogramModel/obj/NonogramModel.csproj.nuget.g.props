@@ -12,4 +12,13 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\thoma\.nuget\packages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.codeanalysis.bannedapianalyzers\3.3.4\buildTransitive\Microsoft.CodeAnalysis.BannedApiAnalyzers.props" Condition="Exists('$(NuGetPackageRoot)microsoft.codeanalysis.bannedapianalyzers\3.3.4\buildTransitive\Microsoft.CodeAnalysis.BannedApiAnalyzers.props')" />
+    <Import Project="$(NuGetPackageRoot)elte.fi.saruleset\3.2.1\build\ELTE.FI.SARuleSet.props" Condition="Exists('$(NuGetPackageRoot)elte.fi.saruleset\3.2.1\build\ELTE.FI.SARuleSet.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgSonarAnalyzer_CSharp Condition=" '$(PkgSonarAnalyzer_CSharp)' == '' ">C:\Users\thoma\.nuget\packages\sonaranalyzer.csharp\10.15.0.120848</PkgSonarAnalyzer_CSharp>
+    <PkgRoslynator_Analyzers Condition=" '$(PkgRoslynator_Analyzers)' == '' ">C:\Users\thoma\.nuget\packages\roslynator.analyzers\4.14.0</PkgRoslynator_Analyzers>
+    <PkgMicrosoft_CodeAnalysis_BannedApiAnalyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_BannedApiAnalyzers)' == '' ">C:\Users\thoma\.nuget\packages\microsoft.codeanalysis.bannedapianalyzers\3.3.4</PkgMicrosoft_CodeAnalysis_BannedApiAnalyzers>
+  </PropertyGroup>
 </Project>
