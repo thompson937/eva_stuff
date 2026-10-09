@@ -1,0 +1,103 @@
+﻿using ELTE.DocuStat.Model;
+using ELTE.DocuStat.Persistence;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ELTE.DocuStat
+{
+    class Program
+    {
+        static int Main(string[] args)
+        {
+            string path;
+            IFileManager? fileManager = null;
+            do
+            {
+                Console.Write("Please enter a valid text or pdf file path: ");
+                path = Console.ReadLine() ?? "";
+                if (System.IO.File.Exists(path))
+                {
+                    fileManager = FileManagerFactory.CreateForPath(path);
+                }
+            }
+            while (fileManager == null);
+
+            ServiceCollection services = new ServiceCollection();
+            services.AddSingleton<IDocumentStatistics, DocumentStatistics>();
+            services.AddSingleton<IFileManager>(fileManager);
+            using ServiceProvider serviceProvider = services.BuildServiceProvider();
+
+            IDocumentStatistics stat = serviceProvider.GetRequiredService<IDocumentStatistics>();
+            try
+            {
+                stat.Load();
+            }
+            catch (FileManagerException e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+
+            Console.WriteLine($"Character count: {stat.CharacterCount}");
+            Console.WriteLine($"Non-whitespace character count: {stat.NonWhiteSpaceCharacterCount}");
+            Console.WriteLine($"Sentence count: {stat.SentenceCount}");
+            Console.WriteLine($"Proper noun count: {stat.ProperNounCount}");
+            Console.WriteLine($"Coleman-Liau index: {stat.ColemanLiauIndex:f2}");
+            Console.WriteLine($"Flesch Reading Ease: {stat.FleschReadingEase:f2}");
+
+            // WORD COUNT
+
+            Console.WriteLine();
+            Console.WriteLine("Parameters for word counting");
+            stat.MinWordLength = ReadPositive("Minimum word length: ");
+            stat.MinWordOccurrence = ReadPositive("Minimum word occurrence: ");
+
+            Console.WriteLine();
+            Console.WriteLine("Ignored words (separated by comma):");
+            bool success = false;
+            do
+            {
+                try
+                {
+                    string line = Console.ReadLine() ?? string.Empty;
+                    // If Ctrl+Z is pressed to send the process to background
+                    // when reading input from the console, Console.ReadLine()
+                    // returns null, which must be handled.
+
+                    // The model normalizes the words, so it is enough to split them here.
+                    stat.IgnoredWords = line.Split(',').ToList();
+                    success = true;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Incorrect format, try again!");
+                }
+            } while (!success);
+
+            foreach (var pair in stat.FilteredWordCount)
+            {
+                Console.WriteLine($"{pair.Key}: {pair.Value}");
+            }
+
+            return 0;
+        }
+
+        static int ReadPositive(string message)
+        {
+            int number;
+            bool success;
+
+            do
+            {
+                Console.Write(message);
+                success = Int32.TryParse(Console.ReadLine(), out number) && number > 0;
+            }
+            while (!success);
+
+            return number;
+        }
+    }
+}

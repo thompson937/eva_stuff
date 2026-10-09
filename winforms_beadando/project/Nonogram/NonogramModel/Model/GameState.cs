@@ -38,6 +38,8 @@ namespace NonogramModel.Model
             _boardSize = data.BoardSize;
             _boardData = data.Board;
             ElapsedTime = data.ElapsedTime;
+
+            // ITT KELL KIVÁLTANI A BUILD BOARDOT!!
         }
 
         int _getBoard(int x, int y)
@@ -173,7 +175,7 @@ namespace NonogramModel.Model
 
                     for (int x = 0; x < _boardSize; x++)
                     {
-                        if ((_getBoard(x, i) & 0b1000) == 0 && (_getBoard(x, i) & 0b0001) != 1)
+                        if ((_getBoard(x, i) & 0b1000) == 0 && (_getBoard(x, i) & 0b0001) == 0)
                         {
                             SetBoard(x, i, CellCategory.PERMANENT_EXCLUSION);
                         }
@@ -189,7 +191,7 @@ namespace NonogramModel.Model
 
                     for (int y = 0; y < _boardSize; y++)
                     {
-                        if ((_getBoard(i, y) & 0b1000) == 0 && (_getBoard(i, y) & 0b0001) != 1)
+                        if ((_getBoard(i, y) & 0b1000) == 0 && (_getBoard(i, y) & 0b0001) == 0)
                         {
                             SetBoard(i, y, CellCategory.PERMANENT_EXCLUSION);
                         }
