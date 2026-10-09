@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NonogramModel.Persistence
 {
-    public interface INonogramFileManager
+    public interface INonogramFileManager : IDisposable
     {
         void Save(NonogramFileData data);
 

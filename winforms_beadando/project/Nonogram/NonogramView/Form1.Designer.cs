@@ -99,7 +99,7 @@
             leafToolStripMenuItem.Size = new Size(119, 22);
             leafToolStripMenuItem.Tag = "leaf_5x5";
             leafToolStripMenuItem.Text = "Leaf";
-            leafToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            leafToolStripMenuItem.Click += NewGamePredefined;
             // 
             // smileyToolStripMenuItem
             // 
@@ -107,7 +107,7 @@
             smileyToolStripMenuItem.Size = new Size(119, 22);
             smileyToolStripMenuItem.Tag = "smiley_5x5";
             smileyToolStripMenuItem.Text = "Smiley";
-            smileyToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            smileyToolStripMenuItem.Click += NewGamePredefined;
             // 
             // bombToolStripMenuItem
             // 
@@ -115,7 +115,7 @@
             bombToolStripMenuItem.Size = new Size(119, 22);
             bombToolStripMenuItem.Tag = "bomb_5x5";
             bombToolStripMenuItem.Text = "Bomb";
-            bombToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            bombToolStripMenuItem.Click += NewGamePredefined;
             // 
             // randomToolStripMenuItem
             // 
@@ -123,7 +123,7 @@
             randomToolStripMenuItem.Size = new Size(119, 22);
             randomToolStripMenuItem.Tag = "5";
             randomToolStripMenuItem.Text = "Random";
-            randomToolStripMenuItem.Click += randomToolStripMenuItem_Click;
+            randomToolStripMenuItem.Click += NewGameRandom;
             // 
             // x10ToolStripMenuItem
             // 
@@ -138,7 +138,7 @@
             bookToolStripMenuItem.Size = new Size(119, 22);
             bookToolStripMenuItem.Tag = "book_10x10";
             bookToolStripMenuItem.Text = "Book";
-            bookToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            bookToolStripMenuItem.Click += NewGamePredefined;
             // 
             // heartToolStripMenuItem
             // 
@@ -146,7 +146,7 @@
             heartToolStripMenuItem.Size = new Size(119, 22);
             heartToolStripMenuItem.Tag = "heart_10x10";
             heartToolStripMenuItem.Text = "Heart";
-            heartToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            heartToolStripMenuItem.Click += NewGamePredefined;
             // 
             // donutToolStripMenuItem
             // 
@@ -154,7 +154,7 @@
             donutToolStripMenuItem.Size = new Size(119, 22);
             donutToolStripMenuItem.Tag = "donut_10x10";
             donutToolStripMenuItem.Text = "Donut";
-            donutToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            donutToolStripMenuItem.Click += NewGamePredefined;
             // 
             // randomToolStripMenuItem1
             // 
@@ -162,7 +162,7 @@
             randomToolStripMenuItem1.Size = new Size(119, 22);
             randomToolStripMenuItem1.Tag = "10";
             randomToolStripMenuItem1.Text = "Random";
-            randomToolStripMenuItem1.Click += randomToolStripMenuItem_Click;
+            randomToolStripMenuItem1.Click += NewGameRandom;
             // 
             // x15ToolStripMenuItem
             // 
@@ -177,7 +177,7 @@
             goombaToolStripMenuItem.Size = new Size(126, 22);
             goombaToolStripMenuItem.Tag = "goomba_15x15";
             goombaToolStripMenuItem.Text = "Goomba";
-            goombaToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            goombaToolStripMenuItem.Click += NewGamePredefined;
             // 
             // starToolStripMenuItem
             // 
@@ -185,7 +185,7 @@
             starToolStripMenuItem.Size = new Size(126, 22);
             starToolStripMenuItem.Tag = "star_15x15";
             starToolStripMenuItem.Text = "Star";
-            starToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            starToolStripMenuItem.Click += NewGamePredefined;
             // 
             // wardrobeToolStripMenuItem
             // 
@@ -193,7 +193,7 @@
             wardrobeToolStripMenuItem.Size = new Size(126, 22);
             wardrobeToolStripMenuItem.Tag = "wardrobe_15x15";
             wardrobeToolStripMenuItem.Text = "Wardrobe";
-            wardrobeToolStripMenuItem.Click += predefinedStripMenuItem_Click;
+            wardrobeToolStripMenuItem.Click += NewGamePredefined;
             // 
             // randomToolStripMenuItem2
             // 
@@ -201,7 +201,7 @@
             randomToolStripMenuItem2.Size = new Size(126, 22);
             randomToolStripMenuItem2.Tag = "15";
             randomToolStripMenuItem2.Text = "Random";
-            randomToolStripMenuItem2.Click += randomToolStripMenuItem_Click;
+            randomToolStripMenuItem2.Click += NewGameRandom;
             // 
             // openStripMenuItem
             // 
@@ -305,7 +305,7 @@
             exitStripMenuItem.ShortcutKeys = Keys.Control | Keys.E;
             exitStripMenuItem.Size = new Size(180, 22);
             exitStripMenuItem.Text = "Exit...";
-            exitStripMenuItem.Click += exitStripMenuItem_Click;
+            exitStripMenuItem.Click += ExitGame;
             // 
             // Form1
             // 

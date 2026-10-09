@@ -8,7 +8,6 @@ namespace NonogramModel.Persistence
     {
         readonly string _path;
 
-
         public NonogramFileManager(string path)
         {
             _path = path;
@@ -45,7 +44,6 @@ namespace NonogramModel.Persistence
                 }
                 catch (Exception ex)
                 {
-
                     throw new NonogramFileException("Loading error: " + ex.Message);
                 }
             }
@@ -69,5 +67,7 @@ namespace NonogramModel.Persistence
                 }
             }
         }
+
+        public void Dispose() { }
     }
 }

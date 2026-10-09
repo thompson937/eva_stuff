@@ -1,7 +1,7 @@
 ﻿namespace NonogramModel.Persistence
 {
     [Serializable]
-    internal class NonogramFileException : Exception
+    public class NonogramFileException : Exception
     {
         public NonogramFileException()
         {

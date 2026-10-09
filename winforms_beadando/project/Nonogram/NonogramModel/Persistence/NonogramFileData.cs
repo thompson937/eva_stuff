@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NonogramModel.Persistence
 {
-    public class NonogramFileData
+    public class NonogramFileData : IDisposable
     {
         public int[] Board { get; }
         public int Lives { get; }
@@ -18,5 +18,7 @@ namespace NonogramModel.Persistence
             ElapsedTime = elapsedTime;
             BoardSize = boardSize;
         }
+
+        public void Dispose() { }
     }
 }

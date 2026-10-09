@@ -1,12 +1,11 @@
 using NonogramModel.Model;
 using NonogramModel.Persistence;
-using System.Xml.Linq;
 
 namespace NonogramView
 {
     public partial class Form1 : Form
     {
-        IGameState? _gamestate;
+        INonogram? _nonogramModel;
         int _boardSize;
         int _btnSize;
         bool _gamePaused;
@@ -20,13 +19,15 @@ namespace NonogramView
         {
             InitializeComponent();
 
-            openStripMenuItem.Click += OpenSaveFileDialog;
-            saveStripMenuItem.Click += SaveSaveFileDialog;
+            openStripMenuItem.Click += LoadGameDialog;
+            saveStripMenuItem.Click += SaveGameDialog;
 
             _gamePaused = false;
         }
 
-        private void SaveSaveFileDialog(object? sender, EventArgs e)
+        #region Toolbar event handlers
+
+        private void SaveGameDialog(object? sender, EventArgs e)
         {
             using (SaveFileDialog sf = new SaveFileDialog())
             {
@@ -40,7 +41,7 @@ namespace NonogramView
                     try
                     {
                         INonogramFileManager fm = new NonogramFileManager(sf.FileName);
-                        _gamestate!.SaveGame(fm);
+                        _nonogramModel!.SaveGame(fm);
 
                     }
                     catch (Exception ex)
@@ -51,7 +52,7 @@ namespace NonogramView
             }
         }
 
-        private void OpenSaveFileDialog(object? sender, EventArgs e)
+        private void LoadGameDialog(object? sender, EventArgs e)
         {
             using (OpenFileDialog of = new OpenFileDialog())
             {
@@ -71,17 +72,9 @@ namespace NonogramView
                     {
                         INonogramFileManager fm = new NonogramFileManager(of.FileName);
                         NonogramFileData data = fm.Load();
+                        fm.Dispose();
 
-                        _boardSize = data.BoardSize;
-                        liveCounterLabel.Text = data.Lives.ToString();
-                        int seconds = data.ElapsedTime % 60;
-                        int minutes = data.ElapsedTime / 60;
-
-                        timeCounterLabel.Text = $"{minutes.ToString("00")}:{seconds.ToString("00")}";
-
-                        _gamestate = new GameState(data);
-
-                        BuildBoard(data);
+                        _initialiseGame(data);
 
                     }
                     catch (Exception ex)
@@ -90,9 +83,53 @@ namespace NonogramView
                     }
                 }
 
-
             }
         }
+
+        private void NewGamePredefined(object sender, EventArgs e)
+        {
+            var stripItem = sender as ToolStripItem;
+
+            if (stripItem != null && stripItem.Tag != null)
+            {
+                INonogramFileManager fm = new NonogramFileManager("Input\\" + stripItem.Tag + ".ngm");
+                NonogramFileData data = fm.Load();
+                fm.Dispose();
+
+                _initialiseGame(data);
+            }
+        }
+
+        private void NewGameRandom(object sender, EventArgs e)
+        {
+            var stripItem = sender as ToolStripItem;
+
+            if (stripItem != null && stripItem.Tag != null)
+            {
+                int boardSize;
+                int.TryParse(stripItem.Tag.ToString(), out boardSize);
+
+                int[] randomBoard = new int[boardSize * boardSize];
+
+                Random random = new Random();
+
+                for (int i = 0; i < randomBoard.Length; i++)
+                {
+                    randomBoard[i] = random.Next(2);
+                }
+                NonogramFileData data = new NonogramFileData(randomBoard, 3, 0, boardSize);
+
+                _initialiseGame(data);
+            }
+        }
+
+        private void ExitGame(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+        #endregion
+
+        #region Model incoming event handlers
 
         private void OnColumnCleared(object? sender, int e)
         {
@@ -167,90 +204,15 @@ namespace NonogramView
             }
         }
 
-        private void BoardButton_Click(object? sender, MouseEventArgs e)
+        private void OnModelReady(object? sender, BoardInitialArgs e)
         {
-            var btn = sender as Button;
-            string[] tag = btn!.Tag!.ToString()!.Split(':');
+            _nonogramModel!.CellChanged += OnCellChanged;
+            _nonogramModel!.LivesSet += OnLivesSet;
+            _nonogramModel!.LoseCondition += OnGameLost;
+            _nonogramModel!.WinCondition += OnGameWon;
 
-            int x, y;
-            int.TryParse(tag[0], out x);
-            int.TryParse(tag[1], out y);
-
-            if (e.Button == MouseButtons.Left)
-            {
-                _gamestate!.SetBoard(x, y, CellCategory.SELECTION);
-            }
-            else if (e.Button == MouseButtons.Right)
-            {
-                _gamestate!.SetBoard(x, y, CellCategory.EXCLUSION);
-            }
-        }
-
-        private void BoardButton_Drag(object? sender, EventArgs e)
-        {
-            var btn = sender as Button;
-            string[] tag = btn!.Tag!.ToString()!.Split(':');
-
-            int x, y;
-            int.TryParse(tag[0], out x);
-            int.TryParse(tag[1], out y);
-
-            if (Control.MouseButtons == MouseButtons.Left)
-            {
-                _gamestate!.SetBoard(x, y, CellCategory.SELECTION);
-            }
-
-            if (Control.MouseButtons == MouseButtons.Right)
-            {
-                _gamestate!.SetBoard(x, y, CellCategory.EXCLUSION);
-            }
-        }
-
-        private void OnGameTimerTick(object sender, EventArgs e)
-        {
-            _gamestate!.ElapsedTime++;
-            int seconds = _gamestate.ElapsedTime % 60;
-            int minutes = _gamestate.ElapsedTime / 60;
-
-            timeCounterLabel.Text = $"{minutes.ToString("00")}:{seconds.ToString("00")}";
-        }
-
-        private void OnGamePaused(object sender, EventArgs e)
-        {
-            if (_gamePaused)
-            {
-                _gamePaused = false;
-                gameTimer.Enabled = true;
-
-                playPauseButton.Text = "Pause";
-
-                foreach (var btn in _buttons) btn.Show();
-                foreach (var lbl in _rowLabels) lbl.Show();
-                foreach (var lbl in _columnLabels) lbl.Show();
-
-            }
-            else
-            {
-                _gamePaused = true;
-                gameTimer.Enabled = false;
-
-                playPauseButton.Text = "Play";
-
-                foreach (var btn in _buttons) btn.Hide();
-                foreach (var lbl in _rowLabels) lbl.Hide();
-                foreach (var lbl in _columnLabels) lbl.Hide();
-            }
-        }
-
-        private void BuildBoard(NonogramFileData data)
-        {
-            _gamestate!.CellChanged += OnCellChanged;
-            _gamestate!.LivesSet += OnLivesSet;
-            _gamestate!.LoseCondition += OnGameLost;
-            _gamestate!.WinCondition += OnGameWon;
-
-            _gamestate!.RowCleared += OnRowCleared;
-            _gamestate!.ColumnCleared += OnColumnCleared;
+            _nonogramModel!.RowCleared += OnRowCleared;
+            _nonogramModel!.ColumnCleared += OnColumnCleared;
 
             _buttons.Clear();
             _rowLabels.Clear();
@@ -259,6 +221,11 @@ namespace NonogramView
             buttonPanel.Controls.Clear();
             rowPanel.Controls.Clear();
             columnPanel.Controls.Clear();
+
+            NonogramFileData data = e.data;
+
+            liveCounterLabel.Text = data.Lives.ToString();
+            timeCounterLabel.Text = $"{data.ElapsedTime / 60}:{data.ElapsedTime % 60}";
 
             _boardSize = data.BoardSize;
 
@@ -311,7 +278,7 @@ namespace NonogramView
                     TextAlign = ContentAlignment.MiddleCenter,
                     Tag = y.ToString(),
                     Font = new Font("Consolas", _btnSize / 2, FontStyle.Bold, GraphicsUnit.Pixel),
-                    Text = _gamestate!.GetRowNumbers(y)
+                    Text = e.rowStrings[y]
                 };
 
                 _rowLabels.Add(lbl);
@@ -328,57 +295,111 @@ namespace NonogramView
                     TextAlign = ContentAlignment.MiddleCenter,
                     Tag = x.ToString(),
                     Font = new Font("Consolas", _btnSize / 2, FontStyle.Bold, GraphicsUnit.Pixel),
-                    Text = _gamestate!.GetColumnNumbers(x)
+                    Text = e.columnStrings[x]
                 };
 
                 _columnLabels.Add(lbl);
                 columnPanel.Controls.Add(lbl);
             }
+
+            data.Dispose();
         }
 
+        #endregion
 
-        private void predefinedStripMenuItem_Click(object sender, EventArgs e)
+        #region View-related event handlers
+
+        private void BoardButton_Click(object? sender, MouseEventArgs e)
         {
-            var stripItem = sender as ToolStripItem;
+            var btn = sender as Button;
+            string[] tag = btn!.Tag!.ToString()!.Split(':');
 
-            if (stripItem != null && stripItem.Tag != null)
+            int x, y;
+            int.TryParse(tag[0], out x);
+            int.TryParse(tag[1], out y);
+
+            if (e.Button == MouseButtons.Left)
             {
-                INonogramFileManager fm = new NonogramFileManager("Input\\" + stripItem.Tag + ".ngm");
-                NonogramFileData data = fm.Load();
-
-                _gamestate = new GameState(data);
-                BuildBoard(data);
+                _nonogramModel!.SetBoard(x, y, CellCategory.SELECTION);
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                _nonogramModel!.SetBoard(x, y, CellCategory.EXCLUSION);
             }
         }
 
-
-        private void randomToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BoardButton_Drag(object? sender, EventArgs e)
         {
-            var stripItem = sender as ToolStripItem;
+            var btn = sender as Button;
+            string[] tag = btn!.Tag!.ToString()!.Split(':');
 
-            if (stripItem != null && stripItem.Tag != null)
+            int x, y;
+            int.TryParse(tag[0], out x);
+            int.TryParse(tag[1], out y);
+
+            if (Control.MouseButtons == MouseButtons.Left)
             {
-                int boardSize;
-                int.TryParse(stripItem.Tag.ToString(), out boardSize);
+                _nonogramModel!.SetBoard(x, y, CellCategory.SELECTION);
+            }
 
-                int[] randomBoard = new int[boardSize * boardSize];
-
-                Random random = new Random();
-
-                for (int i = 0; i < randomBoard.Length; i++)
-                {
-                    randomBoard[i] = random.Next(2);
-                }
-                NonogramFileData data = new NonogramFileData(randomBoard, 3, 0, boardSize);
-
-                _gamestate = new GameState(data);
-                BuildBoard(data);
+            if (Control.MouseButtons == MouseButtons.Right)
+            {
+                _nonogramModel!.SetBoard(x, y, CellCategory.EXCLUSION);
             }
         }
 
-        private void exitStripMenuItem_Click(object sender, EventArgs e)
+        private void OnGameTimerTick(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            _nonogramModel!.ElapsedTime++;
+            int seconds = _nonogramModel.ElapsedTime % 60;
+            int minutes = _nonogramModel.ElapsedTime / 60;
+
+            timeCounterLabel.Text = $"{minutes.ToString("00")}:{seconds.ToString("00")}";
         }
+
+        private void OnGamePaused(object sender, EventArgs e)
+        {
+            if (_gamePaused)
+            {
+                _gamePaused = false;
+                gameTimer.Enabled = true;
+
+                playPauseButton.Text = "Pause";
+
+                foreach (var btn in _buttons) btn.Show();
+                foreach (var lbl in _rowLabels) lbl.Show();
+                foreach (var lbl in _columnLabels) lbl.Show();
+
+            }
+            else
+            {
+                _gamePaused = true;
+                gameTimer.Enabled = false;
+
+                playPauseButton.Text = "Play";
+
+                foreach (var btn in _buttons) btn.Hide();
+                foreach (var lbl in _rowLabels) lbl.Hide();
+                foreach (var lbl in _columnLabels) lbl.Hide();
+            }
+        }
+        #endregion
+
+        #region Private Methods
+        private void _initialiseGame(NonogramFileData data)
+        {
+            if (_nonogramModel != null)
+            {
+                _nonogramModel.Dispose();
+                _nonogramModel = null;
+            }
+
+            _nonogramModel = new Nonogram(data);
+            _nonogramModel.ModelReady += OnModelReady;
+            _nonogramModel.Initialise(data);
+        }
+
+        #endregion
+
     }
 }
