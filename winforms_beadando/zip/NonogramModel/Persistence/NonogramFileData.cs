@@ -6,10 +6,10 @@ namespace NonogramModel.Persistence
 {
     public class NonogramFileData : IDisposable
     {
-        public int[] Board { get; }
-        public int Lives { get; }
-        public int ElapsedTime { get; }
-        public int BoardSize { get; }
+        public int[] Board { get; set; }
+        public int Lives { get; set; }
+        public int ElapsedTime { get; set; }
+        public int BoardSize { get; set; }
 
         public NonogramFileData(int[] board, int lives, int elapsedTime, int boardSize)
         {
