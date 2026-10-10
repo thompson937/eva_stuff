@@ -6,7 +6,8 @@ namespace NonogramView
     public partial class Form1 : Form
     {
         INonogram? _nonogramModel;
-        int _boardSize;
+        NonogramFileData? _data;
+        //int _boardSize;
         int _btnSize;
         bool _gamePaused;
 
@@ -21,8 +22,6 @@ namespace NonogramView
 
             openStripMenuItem.Click += LoadGameDialog;
             saveStripMenuItem.Click += SaveGameDialog;
-
-            _gamePaused = false;
         }
 
         #region Toolbar event handlers
@@ -71,10 +70,10 @@ namespace NonogramView
                     try
                     {
                         INonogramFileManager fm = new NonogramFileManager(of.FileName);
-                        NonogramFileData data = fm.Load();
+                        _data = fm.Load();
                         fm.Dispose();
 
-                        _initialiseGame(data);
+                        _initialiseGame(_data);
 
                     }
                     catch (Exception ex)
@@ -93,10 +92,10 @@ namespace NonogramView
             if (stripItem != null && stripItem.Tag != null)
             {
                 INonogramFileManager fm = new NonogramFileManager("Input\\" + stripItem.Tag + ".ngm");
-                NonogramFileData data = fm.Load();
+                _data = fm.Load();
                 fm.Dispose();
 
-                _initialiseGame(data);
+                _initialiseGame(_data);
             }
         }
 
@@ -117,9 +116,9 @@ namespace NonogramView
                 {
                     randomBoard[i] = random.Next(2);
                 }
-                NonogramFileData data = new NonogramFileData(randomBoard, 3, 0, boardSize);
+                _data = new NonogramFileData(randomBoard, 3, 0, boardSize);
 
-                _initialiseGame(data);
+                _initialiseGame(_data);
             }
         }
 
@@ -172,36 +171,9 @@ namespace NonogramView
 
         private void OnCellChanged(object? sender, CellChangeEventArgs e)
         {
-            int i = e.y * _boardSize + e.x;
+            int i = e.y * _data!.BoardSize + e.x;
 
-            SetButtonAppearance(i, e.category);
-        }
-
-        private void SetButtonAppearance(int i, CellCategory category)
-        {
-            switch (category)
-            {
-                case CellCategory.EXCLUSION:
-                    _buttons[i].Text = "X";
-                    _buttons[i].BackColor = Color.White;
-                    break;
-                case CellCategory.SELECTION:
-                    _buttons[i].Text = String.Empty;
-                    _buttons[i].BackColor = Color.Black;
-                    _buttons[i].Enabled = false;
-                    break;
-                case CellCategory.PERMANENT_EXCLUSION:
-                    _buttons[i].Text = "X";
-                    _buttons[i].BackColor = Color.White;
-                    _buttons[i].Enabled = false;
-                    break;
-                case CellCategory.EMPTY:
-                    _buttons[i].Text = String.Empty;
-                    _buttons[i].BackColor = Color.White;
-                    break;
-                default:
-                    break;
-            }
+            _setButtonAppearance(i, e.category);
         }
 
         private void OnModelReady(object? sender, BoardInitialArgs e)
@@ -222,25 +194,24 @@ namespace NonogramView
             rowPanel.Controls.Clear();
             columnPanel.Controls.Clear();
 
-            NonogramFileData data = e.data;
+            _data = e.data;
 
-            liveCounterLabel.Text = data.Lives.ToString();
-            timeCounterLabel.Text = $"{data.ElapsedTime / 60}:{data.ElapsedTime % 60}";
+            liveCounterLabel.Text = _data.Lives.ToString();
+            timeCounterLabel.Text = $"{(_data.ElapsedTime / 60).ToString("00")}:{(_data.ElapsedTime % 60).ToString("00")}";
 
-            _boardSize = data.BoardSize;
+            _btnSize = buttonPanel.Height / _data.BoardSize;
 
-            _btnSize = buttonPanel.Height / _boardSize;
-
+            _gamePaused = false;
             gameTimer.Start();
             playPauseButton.Enabled = true;
             saveStripMenuItem.Enabled = true;
 
             // Button Panel Setup
-            for (int y = 0; y < _boardSize; y++)
+            for (int y = 0; y < _data.BoardSize; y++)
             {
-                for (int x = 0; x < _boardSize; x++)
+                for (int x = 0; x < _data.BoardSize; x++)
                 {
-                    int i = y * _boardSize + x;
+                    int i = y * _data.BoardSize + x;
 
                     Button btn = new Button
                     {
@@ -257,19 +228,19 @@ namespace NonogramView
                     _buttons.Add(btn);
                     buttonPanel.Controls.Add(btn);
 
-                    bool selected = (data.Board[i] & 0b0010) != 0;
-                    bool excluded = (data.Board[i] & 0b0100) != 0;
-                    bool incorrect = (data.Board[i] & 0b1000) != 0;
+                    bool selected = (_data.Board[i] & 0b0010) != 0;
+                    bool excluded = (_data.Board[i] & 0b0100) != 0;
+                    bool incorrect = (_data.Board[i] & 0b1000) != 0;
 
-                    if (excluded) SetButtonAppearance(i, CellCategory.EXCLUSION);
-                    if (incorrect) SetButtonAppearance(i, CellCategory.PERMANENT_EXCLUSION);
-                    if (selected) SetButtonAppearance(i, CellCategory.SELECTION);
+                    if (excluded) _setButtonAppearance(i, CellCategory.EXCLUSION);
+                    if (incorrect) _setButtonAppearance(i, CellCategory.PERMANENT_EXCLUSION);
+                    if (selected) _setButtonAppearance(i, CellCategory.SELECTION);
 
                 }
             }
 
             // Row Setup
-            for (int y = 0; y < _boardSize; y++)
+            for (int y = 0; y < _data.BoardSize; y++)
             {
                 Label lbl = new Label
                 {
@@ -286,7 +257,7 @@ namespace NonogramView
             }
 
             // Column Setup
-            for (int x = 0; x < _boardSize; x++)
+            for (int x = 0; x < _data.BoardSize; x++)
             {
                 Label lbl = new Label
                 {
@@ -301,8 +272,6 @@ namespace NonogramView
                 _columnLabels.Add(lbl);
                 columnPanel.Controls.Add(lbl);
             }
-
-            data.Dispose();
         }
 
         #endregion
@@ -350,9 +319,9 @@ namespace NonogramView
 
         private void OnGameTimerTick(object sender, EventArgs e)
         {
-            _nonogramModel!.ElapsedTime++;
-            int seconds = _nonogramModel.ElapsedTime % 60;
-            int minutes = _nonogramModel.ElapsedTime / 60;
+            _data!.ElapsedTime++;
+            int seconds = _data!.ElapsedTime % 60;
+            int minutes = _data!.ElapsedTime / 60;
 
             timeCounterLabel.Text = $"{minutes.ToString("00")}:{seconds.ToString("00")}";
         }
@@ -396,7 +365,34 @@ namespace NonogramView
 
             _nonogramModel = new Nonogram(data);
             _nonogramModel.ModelReady += OnModelReady;
-            _nonogramModel.Initialise(data);
+            _nonogramModel.Initialise();
+        }
+
+        private void _setButtonAppearance(int i, CellCategory category)
+        {
+            switch (category)
+            {
+                case CellCategory.EXCLUSION:
+                    _buttons[i].Text = "X";
+                    _buttons[i].BackColor = Color.White;
+                    break;
+                case CellCategory.SELECTION:
+                    _buttons[i].Text = String.Empty;
+                    _buttons[i].BackColor = Color.Black;
+                    _buttons[i].Enabled = false;
+                    break;
+                case CellCategory.PERMANENT_EXCLUSION:
+                    _buttons[i].Text = "X";
+                    _buttons[i].BackColor = Color.White;
+                    _buttons[i].Enabled = false;
+                    break;
+                case CellCategory.EMPTY:
+                    _buttons[i].Text = String.Empty;
+                    _buttons[i].BackColor = Color.White;
+                    break;
+                default:
+                    break;
+            }
         }
 
         #endregion

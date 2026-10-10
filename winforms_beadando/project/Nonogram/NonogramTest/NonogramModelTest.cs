@@ -33,7 +33,7 @@ namespace NonogramTest
 
             _model!.ModelReady += (_, args) => loadedArgs = args;
 
-            _model!.Initialise(_getTestData());
+            _model!.Initialise();
 
             Assert.IsNotNull(loadedArgs);
             Assert.IsNotEmpty(loadedArgs.rowStrings);

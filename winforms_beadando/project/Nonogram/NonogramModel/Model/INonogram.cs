@@ -7,13 +7,13 @@ namespace NonogramModel.Model
 {
     public interface INonogram : IDisposable
     {
-        int ElapsedTime { get; set; }
+        NonogramFileData Data { get; set; }
 
         void SetBoard(int x, int y, CellCategory type);
 
         void SaveGame(INonogramFileManager fileManager);
 
-        void Initialise(NonogramFileData data);
+        void Initialise();
 
         event EventHandler? WinCondition;
         event EventHandler? LoseCondition;
