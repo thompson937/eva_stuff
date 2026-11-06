@@ -9,6 +9,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{24947E67-12D0-AD90-A694-A8F2926514DB}|ImageDownloader\\ImageDownloader.csproj|c:\\users\\ko8dqj\\documents\\eva_stuff\\07\\imagedownloader\\imagedownloader\\imagedownloader\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24947E67-12D0-AD90-A694-A8F2926514DB}|ImageDownloader\\ImageDownloader.csproj|solutionrelative:imagedownloader\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24947E67-12D0-AD90-A694-A8F2926514DB}|ImageDownloader\\ImageDownloader.csproj|c:\\users\\ko8dqj\\documents\\eva_stuff\\07\\imagedownloader\\imagedownloader\\imagedownloader\\model\\webpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24947E67-12D0-AD90-A694-A8F2926514DB}|ImageDownloader\\ImageDownloader.csproj|solutionrelative:imagedownloader\\model\\webpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24947E67-12D0-AD90-A694-A8F2926514DB}|ImageDownloader\\ImageDownloader.csproj|c:\\users\\ko8dqj\\documents\\eva_stuff\\07\\imagedownloader\\imagedownloader\\imagedownloader\\imagewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{24947E67-12D0-AD90-A694-A8F2926514DB}|ImageDownloader\\ImageDownloader.csproj|solutionrelative:imagedownloader\\imagewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24947E67-12D0-AD90-A694-A8F2926514DB}|ImageDownloader\\ImageDownloader.csproj|c:\\users\\ko8dqj\\documents\\eva_stuff\\07\\imagedownloader\\imagedownloader\\imagedownloader\\model\\webimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24947E67-12D0-AD90-A694-A8F2926514DB}|ImageDownloader\\ImageDownloader.csproj|solutionrelative:imagedownloader\\model\\webimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +30,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ImageWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\07\\ImageDownloader\\ImageDownloader\\ImageDownloader\\ImageWindow.xaml",
+              "RelativeDocumentMoniker": "ImageDownloader\\ImageWindow.xaml",
+              "ToolTip": "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\07\\ImageDownloader\\ImageDownloader\\ImageDownloader\\ImageWindow.xaml",
+              "RelativeToolTip": "ImageDownloader\\ImageWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-06T12:31:48.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Webimage.cs",
+              "DocumentMoniker": "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\07\\ImageDownloader\\ImageDownloader\\ImageDownloader\\Model\\Webimage.cs",
+              "RelativeDocumentMoniker": "ImageDownloader\\Model\\Webimage.cs",
+              "ToolTip": "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\07\\ImageDownloader\\ImageDownloader\\ImageDownloader\\Model\\Webimage.cs",
+              "RelativeToolTip": "ImageDownloader\\Model\\Webimage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-06T11:34:37.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Webpage.cs",
+              "DocumentMoniker": "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\07\\ImageDownloader\\ImageDownloader\\ImageDownloader\\Model\\Webpage.cs",
+              "RelativeDocumentMoniker": "ImageDownloader\\Model\\Webpage.cs",
+              "ToolTip": "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\07\\ImageDownloader\\ImageDownloader\\ImageDownloader\\Model\\Webpage.cs",
+              "RelativeToolTip": "ImageDownloader\\Model\\Webpage.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAADwvysAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-06T11:34:27.458Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -40,9 +90,10 @@
               "RelativeDocumentMoniker": "ImageDownloader\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\07\\ImageDownloader\\ImageDownloader\\ImageDownloader\\MainWindow.xaml.cs",
               "RelativeToolTip": "ImageDownloader\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAIwGMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-06T11:11:48.199Z"
+              "WhenOpened": "2026-11-06T11:11:48.199Z",
+              "EditorCaption": ""
             }
           ]
         }

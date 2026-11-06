@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageDownloader"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Image Downloader" Height="450" Width="800">
+    <DockPanel>
+        <TextBox Name="urlTextBox" Text="https://www.inf.elte.hu" DockPanel.Dock="Top"/>
+        <Button Name="loadBtn" Content="Képek betöltése" DockPanel.Dock="Top" Click="StartStopLoad">
+            <Button.Background>
+                <LinearGradientBrush StartPoint=".5,0" EndPoint=".5,1">
+                    <GradientStop Offset="0" Color="Beige"/>
+                    <GradientStop Offset="0.5" Color="White"/>
+                    <GradientStop Offset="1" Color="Beige"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock Name="imageCountLabel" Text="Képek száma:"/>
+            <TextBlock Name="imageCountValue" Text="0"/>
+            <ProgressBar Name="loadProgressBar" Height="10" Width="200" Visibility="Hidden"/>
+        </StatusBar>
+        <ScrollViewer>
+            <WrapPanel Name ="picturePanel"/>
+        </ScrollViewer>
+    </DockPanel>
 </Window>
