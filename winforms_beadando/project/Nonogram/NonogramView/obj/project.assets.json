@@ -230,19 +230,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thoma\\.nuget\\packages\\": {}
+    "C:\\Users\\KO8DQJ\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\NonogramView.csproj",
+      "projectUniqueName": "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\NonogramView.csproj",
       "projectName": "NonogramView",
-      "projectPath": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\NonogramView.csproj",
-      "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\obj\\",
+      "projectPath": "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\NonogramView.csproj",
+      "packagesPath": "C:\\Users\\KO8DQJ\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramView\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\KO8DQJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -250,6 +255,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -257,8 +263,8 @@
           "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
           "projectReferences": {
-            "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\NonogramModel.csproj": {
-              "projectPath": "C:\\Users\\thoma\\eva\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\NonogramModel.csproj"
+            "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\NonogramModel.csproj": {
+              "projectPath": "C:\\Users\\KO8DQJ\\Documents\\eva_stuff\\winforms_beadando\\project\\Nonogram\\NonogramModel\\NonogramModel.csproj"
             }
           }
         }
@@ -306,7 +312,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
